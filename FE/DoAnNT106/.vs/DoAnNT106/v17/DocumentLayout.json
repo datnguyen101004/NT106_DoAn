@@ -1,0 +1,103 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\HK2_2024\\LT_network\\DoAn\\NT106_Project\\FE\\DoAnNT106\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|E:\\HK2_2024\\LT_network\\DoAn\\NT106_Project\\FE\\DoAnNT106\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|E:\\HK2_2024\\LT_network\\DoAn\\NT106_Project\\FE\\DoAnNT106\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|E:\\HK2_2024\\LT_network\\DoAn\\NT106_Project\\FE\\DoAnNT106\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|e:\\hk2_2024\\lt_network\\doan\\nt106_project\\fe\\doannt106\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|E:\\HK2_2024\\LT_network\\DoAn\\NT106_Project\\FE\\DoAnNT106\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "signup.cs",
+              "DocumentMoniker": "E:\\HK2_2024\\LT_network\\DoAn\\NT106_Project\\FE\\DoAnNT106\\signup.cs",
+              "RelativeDocumentMoniker": "signup.cs",
+              "ToolTip": "E:\\HK2_2024\\LT_network\\DoAn\\NT106_Project\\FE\\DoAnNT106\\signup.cs",
+              "RelativeToolTip": "signup.cs",
+              "ViewState": "AQIAACgAAAAAAAAAAAAYwDUAAAByAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T00:12:40.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "signup.cs [Design]",
+              "DocumentMoniker": "E:\\HK2_2024\\LT_network\\DoAn\\NT106_Project\\FE\\DoAnNT106\\signup.cs",
+              "RelativeDocumentMoniker": "signup.cs",
+              "ToolTip": "E:\\HK2_2024\\LT_network\\DoAn\\NT106_Project\\FE\\DoAnNT106\\signup.cs [Design]",
+              "RelativeToolTip": "signup.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T00:10:32.396Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "User.cs",
+              "DocumentMoniker": "E:\\HK2_2024\\LT_network\\DoAn\\NT106_Project\\FE\\DoAnNT106\\User.cs",
+              "RelativeDocumentMoniker": "User.cs",
+              "ToolTip": "E:\\HK2_2024\\LT_network\\DoAn\\NT106_Project\\FE\\DoAnNT106\\User.cs",
+              "RelativeToolTip": "User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T23:57:38.957Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "E:\\HK2_2024\\LT_network\\DoAn\\NT106_Project\\FE\\DoAnNT106\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "E:\\HK2_2024\\LT_network\\DoAn\\NT106_Project\\FE\\DoAnNT106\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAAkwEsAAABhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T03:47:38.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "E:\\HK2_2024\\LT_network\\DoAn\\NT106_Project\\FE\\DoAnNT106\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "E:\\HK2_2024\\LT_network\\DoAn\\NT106_Project\\FE\\DoAnNT106\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T02:21:00.204Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
