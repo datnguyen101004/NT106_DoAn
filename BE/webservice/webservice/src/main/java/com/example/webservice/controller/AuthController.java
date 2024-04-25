@@ -51,4 +51,9 @@ public class AuthController {
     public ResponseEntity<String> sendEmailWithAttachment(@RequestBody EmailDetail emailDetailAttachment){
         return ResponseEntity.ok(mailService.sendEmailWithAttachment(emailDetailAttachment));
     }
+
+    @GetMapping("")
+    public String hello(){
+        return "hello";
+    }
 }

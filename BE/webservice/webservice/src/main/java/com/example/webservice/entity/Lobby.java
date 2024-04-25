@@ -1,7 +1,6 @@
 package com.example.webservice.entity;
 
 import jakarta.persistence.*;
-import jakarta.persistence.criteria.Fetch;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,11 +13,13 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "tb_lobby")
-public class ListRoom {
+public class Lobby {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "listRoom", cascade = CascadeType.ALL)
+    private boolean exist = false;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "lobby", cascade = CascadeType.ALL)
     private List<Room> roomList = new ArrayList<>();
 }

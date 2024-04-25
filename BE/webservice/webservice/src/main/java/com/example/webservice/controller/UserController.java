@@ -1,6 +1,8 @@
 package com.example.webservice.controller;
 
+import com.example.webservice.dto.CreateRoomDto;
 import com.example.webservice.dto.UserChangePassword;
+import com.example.webservice.dto.UserDto;
 import com.example.webservice.service.AuthService;
 import com.example.webservice.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -17,5 +19,15 @@ public class UserController {
     @PostMapping("/changePassword")
     public ResponseEntity<String> changePassword(@RequestBody UserChangePassword userChangePassword){
         return ResponseEntity.ok().body(userService.changPassword(userChangePassword));
+    }
+
+    @PostMapping("/createRoom")
+    public ResponseEntity<String> createRoom(@RequestBody CreateRoomDto createRoomDto) throws Exception {
+        return ResponseEntity.ok().body(userService.createRoom(createRoomDto));
+    }
+
+    @PostMapping("/joinRoom")
+    public ResponseEntity<String> joinRoom(@RequestBody UserDto userDto) throws Exception {
+        return ResponseEntity.ok().body(userService.joinRoom(userDto));
     }
 }
