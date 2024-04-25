@@ -18,11 +18,12 @@ namespace DoAnNT106
         public Form1()
         {
             InitializeComponent();
+            this.SetStyle(ControlStyles.DoubleBuffer | ControlStyles.OptimizedDoubleBuffer | ControlStyles.AllPaintingInWmPaint, true);
+            this.UpdateStyles();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
         private static HttpClient httpClient = new HttpClient()
@@ -80,6 +81,11 @@ namespace DoAnNT106
                 String message = await httpResponse.Content.ReadAsStringAsync();
                 MessageBox.Show(message);
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
