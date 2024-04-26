@@ -60,5 +60,10 @@ namespace DoAnNT106
                 MessageBox.Show("Register fail. Email is invalid or exist!");
             }
         }
+
+        private void signup_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
