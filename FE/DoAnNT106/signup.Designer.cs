@@ -42,9 +42,9 @@
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(41, 392);
+            this.button2.Location = new System.Drawing.Point(356, 496);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(170, 43);
+            this.button2.Size = new System.Drawing.Size(176, 60);
             this.button2.TabIndex = 12;
             this.button2.Text = "Sign up";
             this.button2.UseVisualStyleBackColor = false;
@@ -53,26 +53,29 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(137, 290);
+            this.textBox2.Location = new System.Drawing.Point(310, 283);
+            this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(190, 23);
+            this.textBox2.Size = new System.Drawing.Size(316, 37);
             this.textBox2.TabIndex = 10;
             // 
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(137, 225);
+            this.textBox1.Location = new System.Drawing.Point(310, 187);
+            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 23);
+            this.textBox1.Size = new System.Drawing.Size(316, 37);
             this.textBox1.TabIndex = 9;
             // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(137, 354);
+            this.textBox3.Location = new System.Drawing.Point(310, 375);
+            this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(190, 23);
+            this.textBox3.Size = new System.Drawing.Size(316, 37);
             this.textBox3.TabIndex = 14;
             // 
             // signup
@@ -80,16 +83,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.BackgroundImage = global::DoAnNT106.Properties.Resources._1;
+            this.BackgroundImage = global::DoAnNT106.Properties.Resources.WELCOME__12_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(663, 471);
+            this.ClientSize = new System.Drawing.Size(1262, 673);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.DoubleBuffered = true;
             this.Name = "signup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "signup";
+            this.Load += new System.EventHandler(this.signup_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
