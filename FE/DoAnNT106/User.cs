@@ -8,6 +8,7 @@ namespace DoAnNT106
 {
     internal class User
     {
+        public String userId { get; set; }
         public String username { get; set; }
         public String email { get; set; }
         public String password { get; set; }
