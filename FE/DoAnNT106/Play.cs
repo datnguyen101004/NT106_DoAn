@@ -24,10 +24,18 @@ namespace DoAnNT106
         public Play()
         {
             InitializeComponent();
-            IPEndPoint iPEndPoint = new IPEndPoint(IPAddress.Parse(ip), port);
-            tcpClient.Connect(iPEndPoint);
-            sw = new StreamWriter(tcpClient.GetStream());
-            sr = new StreamReader(tcpClient.GetStream());
+            CheckForIllegalCrossThreadCalls = false;
+            try
+            {
+                IPEndPoint iPEndPoint = new IPEndPoint(IPAddress.Parse(ip), port);
+                tcpClient.Connect(iPEndPoint);
+                sw = new StreamWriter(tcpClient.GetStream());
+                sr = new StreamReader(tcpClient.GetStream());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnSendMessage_Click(object sender, EventArgs e)
@@ -57,14 +65,12 @@ namespace DoAnNT106
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                return;
             }
-            finally
-            {
-                sr.Close();
-                sw.Close();
-                tcpClient.Close();
-            }
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
