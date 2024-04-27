@@ -1,10 +1,11 @@
-﻿using Lab3;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -26,21 +27,13 @@ namespace DoAnNT106
             clientThread.Start();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            CheckForIllegalCrossThreadCalls = false;
-            Thread serverThread = new Thread(new ThreadStart(server));
-            serverThread.Start();
-        }
+
 
         private void client()
         {
             Application.Run(new Play());
         }
 
-        private void server()
-        {
-            Application.Run(new B4_tcpserver());
-        }
+
     }
 }

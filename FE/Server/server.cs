@@ -12,13 +12,13 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Lab3
+namespace Server
 {
-    public partial class B4_tcpserver : Form
+    public partial class server : Form
     {
         TcpListener serverSocket = new TcpListener(IPAddress.Any, 8081);
         List<TcpClient> clientsList = new List<TcpClient>();
-        public B4_tcpserver()
+        public server()
         {
             InitializeComponent();
         }
@@ -42,13 +42,12 @@ namespace Lab3
                     clientsList.Add(clientSocket);
                     if (clientSocket.Connected)
                     {
-                        richTextBox1.AppendText("New client connected"+ "\r\n");
+                        richTextBox1.AppendText("New client connected" + "\r\n");
                     }
                     Thread clientThread = new Thread(new ParameterizedThreadStart(HandleClient));
                     clientThread.IsBackground = true;
                     clientThread.Start(clientSocket);
                 }
-                serverSocket.Stop();
             }
             catch (Exception ex)
             {
@@ -88,14 +87,22 @@ namespace Lab3
         {
             foreach (TcpClient client in clientsList)
             {
+                if (!client.Connected)
+                {
+                    clientsList.Remove(client);
+                    richTextBox1.AppendText("Client disconected");
+                }
+            }
+            foreach (TcpClient client in clientsList)
+            {
                 StreamWriter writer = new StreamWriter(client.GetStream());
                 writer.AutoFlush = true;
                 writer.WriteLine(message);
             }
         }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click_1(object sender, EventArgs e)
         {
+            serverSocket.Stop();
             Close();
         }
     }

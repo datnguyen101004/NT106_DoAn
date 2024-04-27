@@ -1,0 +1,10 @@
+E:\HK2_2024\LT_network\Project\NT106_DoAn\FE\Server\bin\Debug\Server.exe.config
+E:\HK2_2024\LT_network\Project\NT106_DoAn\FE\Server\bin\Debug\Server.exe
+E:\HK2_2024\LT_network\Project\NT106_DoAn\FE\Server\bin\Debug\Server.pdb
+E:\HK2_2024\LT_network\Project\NT106_DoAn\FE\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+E:\HK2_2024\LT_network\Project\NT106_DoAn\FE\Server\obj\Debug\Server.Properties.Resources.resources
+E:\HK2_2024\LT_network\Project\NT106_DoAn\FE\Server\obj\Debug\Server.csproj.GenerateResource.cache
+E:\HK2_2024\LT_network\Project\NT106_DoAn\FE\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+E:\HK2_2024\LT_network\Project\NT106_DoAn\FE\Server\obj\Debug\Server.exe
+E:\HK2_2024\LT_network\Project\NT106_DoAn\FE\Server\obj\Debug\Server.pdb
+E:\HK2_2024\LT_network\Project\NT106_DoAn\FE\Server\obj\Debug\Server.server.resources
