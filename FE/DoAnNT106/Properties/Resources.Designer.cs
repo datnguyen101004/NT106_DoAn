@@ -93,9 +93,39 @@ namespace DoAnNT106.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap WELCOME__12_1 {
+            get {
+                object obj = ResourceManager.GetObject("WELCOME (12)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WELCOME__180_x_54_px_ {
+            get {
+                object obj = ResourceManager.GetObject("WELCOME (180 x 54 px)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap WELCOME__9_ {
             get {
                 object obj = ResourceManager.GetObject("WELCOME (9)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WELCOME__9_1 {
+            get {
+                object obj = ResourceManager.GetObject("WELCOME (9)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
