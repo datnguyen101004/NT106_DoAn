@@ -32,7 +32,7 @@ namespace DoAnNT106
 
         private void btnSendMessage_Click(object sender, EventArgs e)
         {
-            String message = richTextBox2.Text;
+            String message = bt_keo.Text;
             //Send message
             sw.AutoFlush = true;
             sw.WriteLine(message);

@@ -137,5 +137,23 @@
   <ItemGroup>
     <None Include="Resources\WELCOME %2812%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WELCOME %2817%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Keo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ROCK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Scissors.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
