@@ -15,6 +15,7 @@ namespace DoAnNT106
 {
     public partial class Lobby : Form
     {
+        bool sidebarExpand;
         public Lobby()
         {
             InitializeComponent();
@@ -34,6 +35,36 @@ namespace DoAnNT106
             Application.Run(new Play());
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            sidebarTimer.Start();
+        }
+
+        private void sidebarTimer_Tick(object sender, EventArgs e)
+        {
+            if (sidebarExpand)
+            {
+                sidebar.Width -= 10;
+                if (sidebar.Width == sidebar.MinimumSize.Width) 
+                {
+                    sidebarExpand = false;
+                    sidebarTimer.Stop();
+                }
+            }
+            else
+            {
+                sidebar.Width += 10;
+                if (sidebar.Width == sidebar.MaximumSize.Width)
+                {
+                    sidebarExpand= true;
+                    sidebarTimer.Stop();
+                }
+            }
+        }
     }
 }
