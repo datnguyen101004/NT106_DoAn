@@ -66,5 +66,13 @@ namespace DoAnNT106
                 }
             }
         }
+
+        private void bt_info_Click(object sender, EventArgs e)
+        {
+            Info frmInfo = new Info();
+            frmInfo.ShowDialog();
+            frmInfo = null;
+            this.Show();
+        }
     }
 }

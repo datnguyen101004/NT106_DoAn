@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Info.Designer.cs">
+      <DependentUpon>Info.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +83,9 @@
       <DependentUpon>signup.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="Info.resx">
+      <DependentUpon>Info.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +136,66 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\WELCOME %2812%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\bao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\bao1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\cogwheel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\faq.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\LOGIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\LOGIN1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\nen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\ROCK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\ROCK1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Scissors.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\Scissors1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\technical-support.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\trangchu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\WELCOME %289%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\WELCOME %2812%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SIGNIN.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
