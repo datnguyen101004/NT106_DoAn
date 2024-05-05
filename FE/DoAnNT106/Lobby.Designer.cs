@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -38,10 +39,9 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.bt_info = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,6 +73,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(247, 144);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.Location = new System.Drawing.Point(104, 62);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 28);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Menu";
             // 
             // pictureBox1
             // 
@@ -154,28 +165,29 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.button4);
+            this.panel4.Controls.Add(this.bt_info);
             this.panel4.Location = new System.Drawing.Point(3, 350);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(247, 89);
             this.panel4.TabIndex = 4;
             // 
-            // button4
+            // bt_info
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button4.Image = global::DoAnNT106.Properties.Resources.faq;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(-3, -10);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(257, 108);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "                 Thông Tin";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
+            this.bt_info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bt_info.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.bt_info.Image = global::DoAnNT106.Properties.Resources.faq;
+            this.bt_info.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_info.Location = new System.Drawing.Point(-3, -10);
+            this.bt_info.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.bt_info.Name = "bt_info";
+            this.bt_info.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.bt_info.Size = new System.Drawing.Size(257, 108);
+            this.bt_info.TabIndex = 3;
+            this.bt_info.Text = "                 Thông Tin";
+            this.bt_info.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bt_info.UseVisualStyleBackColor = true;
+            this.bt_info.Click += new System.EventHandler(this.bt_info_Click);
             // 
             // panel5
             // 
@@ -201,17 +213,6 @@
             this.button5.Text = "                 Hỗ Trợ";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(104, 62);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 28);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Menu";
             // 
             // sidebarTimer
             // 
@@ -254,7 +255,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button bt_info;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.PictureBox pictureBox1;
