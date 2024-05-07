@@ -1,0 +1,204 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|e:\\hk2_2024\\lt_network\\clone\\nt106_doan\\fe\\doannt106\\lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|e:\\hk2_2024\\lt_network\\clone\\nt106_doan\\fe\\doannt106\\play.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:play.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\play.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:play.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\createroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:createroom.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:signup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|DoAnNT106||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Lobby.cs [Design]",
+              "DocumentMoniker": "E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\Lobby.cs",
+              "RelativeDocumentMoniker": "Lobby.cs",
+              "ToolTip": "E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\Lobby.cs [Design]",
+              "RelativeToolTip": "Lobby.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T04:58:18.697Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Lobby.cs",
+              "DocumentMoniker": "E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\Lobby.cs",
+              "RelativeDocumentMoniker": "Lobby.cs",
+              "ToolTip": "E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\Lobby.cs",
+              "RelativeToolTip": "Lobby.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAAArwB4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T05:02:48.246Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "signup.cs",
+              "DocumentMoniker": "E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\signup.cs",
+              "RelativeDocumentMoniker": "signup.cs",
+              "ToolTip": "E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\signup.cs",
+              "RelativeToolTip": "signup.cs",
+              "ViewState": "AQIAACIAAAAAAAAAAAAAADYAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T06:26:48.938Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Play.cs",
+              "DocumentMoniker": "E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\Play.cs",
+              "RelativeDocumentMoniker": "Play.cs",
+              "ToolTip": "E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\Play.cs",
+              "RelativeToolTip": "Play.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAQwCcAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T02:02:21.85Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Play.cs [Design]",
+              "DocumentMoniker": "E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\Play.cs",
+              "RelativeDocumentMoniker": "Play.cs",
+              "ToolTip": "E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\Play.cs [Design]",
+              "RelativeToolTip": "Play.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T04:58:20.147Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "signup.cs [Design]",
+              "DocumentMoniker": "E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\signup.cs",
+              "RelativeDocumentMoniker": "signup.cs",
+              "ToolTip": "E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\signup.cs [Design]",
+              "RelativeToolTip": "signup.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T06:26:47.107Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CreateRoom.cs",
+              "DocumentMoniker": "E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\CreateRoom.cs",
+              "RelativeDocumentMoniker": "CreateRoom.cs",
+              "ToolTip": "E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\CreateRoom.cs",
+              "RelativeToolTip": "CreateRoom.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T06:14:52.026Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Login.cs",
+              "DocumentMoniker": "E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\Login.cs",
+              "RelativeDocumentMoniker": "Login.cs",
+              "ToolTip": "E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\Login.cs",
+              "RelativeToolTip": "Login.cs",
+              "ViewState": "AQIAAFgAAAAAAAAAAAAAAGEAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T05:03:02.561Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T03:24:36.832Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Login.cs [Design]",
+              "DocumentMoniker": "E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\Login.cs",
+              "RelativeDocumentMoniker": "Login.cs",
+              "ToolTip": "E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\Login.cs [Design]",
+              "RelativeToolTip": "Login.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T03:24:36.175Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DoAnNT106",
+              "DocumentMoniker": "E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\DoAnNT106.csproj",
+              "RelativeDocumentMoniker": "DoAnNT106.csproj",
+              "ToolTip": "E:\\HK2_2024\\LT_network\\clone\\NT106_DoAn\\FE\\DoAnNT106\\DoAnNT106.csproj",
+              "RelativeToolTip": "DoAnNT106.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-05-06T03:23:34.735Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

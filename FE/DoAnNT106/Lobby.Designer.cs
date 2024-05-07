@@ -42,7 +42,13 @@
             this.bt_info = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
+            this.button4 = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.sidebar.SuspendLayout();
@@ -55,12 +61,12 @@
             // button1
             // 
             this.button1.Image = global::DoAnNT106.Properties.Resources.LOGIN;
-            this.button1.Location = new System.Drawing.Point(698, 249);
+            this.button1.Location = new System.Drawing.Point(1078, 583);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(193, 93);
+            this.button1.Size = new System.Drawing.Size(172, 77);
             this.button1.TabIndex = 0;
-            this.button1.Text = "client";
+            this.button1.Text = "Vào phòng";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -104,6 +110,7 @@
             this.sidebar.Controls.Add(this.panel3);
             this.sidebar.Controls.Add(this.panel4);
             this.sidebar.Controls.Add(this.panel5);
+            this.sidebar.Controls.Add(this.label2);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 0);
             this.sidebar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -214,10 +221,64 @@
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(80, 590);
+            this.label2.Margin = new System.Windows.Forms.Padding(80, 50, 50, 50);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 28);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "label2";
+            // 
             // sidebarTimer
             // 
             this.sidebarTimer.Interval = 10;
             this.sidebarTimer.Tick += new System.EventHandler(this.sidebarTimer_Tick);
+            // 
+            // button4
+            // 
+            this.button4.Image = global::DoAnNT106.Properties.Resources.LOGIN;
+            this.button4.Location = new System.Drawing.Point(1078, 486);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(172, 77);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Tạo phòng";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.listView1.GridLines = true;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(338, 66);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(693, 552);
+            this.listView1.TabIndex = 3;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Số phòng";
+            this.columnHeader1.Width = 252;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Loại phòng";
+            this.columnHeader2.Width = 227;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Số người";
+            this.columnHeader3.Width = 210;
             // 
             // Lobby
             // 
@@ -225,6 +286,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::DoAnNT106.Properties.Resources.nen;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.sidebar);
             this.Controls.Add(this.button1);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -233,10 +296,12 @@
             this.Name = "Lobby";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "git s";
+            this.Load += new System.EventHandler(this.Lobby_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.sidebar.ResumeLayout(false);
+            this.sidebar.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -261,5 +326,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer sidebarTimer;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.Label label2;
     }
 }

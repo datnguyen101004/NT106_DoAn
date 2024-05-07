@@ -83,7 +83,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.BackgroundImage = global::DoAnNT106.Properties.Resources.WELCOME__12_;
+            this.BackgroundImage = global::DoAnNT106.Properties.Resources.SIGNIN;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1262, 673);
             this.Controls.Add(this.textBox3);
