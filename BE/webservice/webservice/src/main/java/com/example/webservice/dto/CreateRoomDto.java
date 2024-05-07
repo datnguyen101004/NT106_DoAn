@@ -11,4 +11,5 @@ public class CreateRoomDto {
     private String username;
     private String roomId;
     private int typeMoney;
+    private int numberPeople;
 }

@@ -3,10 +3,9 @@ package com.example.webservice.service.impl;
 import com.example.webservice.dto.CreateRoomDto;
 import com.example.webservice.dto.UserChangePassword;
 import com.example.webservice.dto.UserDto;
-import com.example.webservice.entity.Lobby;
+
 import com.example.webservice.entity.Room;
 import com.example.webservice.entity.User;
-import com.example.webservice.repository.LobbyRepository;
 import com.example.webservice.repository.RoomRepository;
 import com.example.webservice.repository.UserRepository;
 import com.example.webservice.service.UserService;
@@ -22,7 +21,6 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final RoomRepository roomRepository;
-    private final LobbyRepository lobbyRepository;
 
     @Override
     public String changPassword(UserChangePassword userChangePassword) {
@@ -47,13 +45,11 @@ public class UserServiceImpl implements UserService {
             List<User> userList = new ArrayList<>();
             userList.add(user);
             room.setUserList(userList);
-            Lobby lobby = lobbyRepository.findAll().getFirst();
-            room.setLobby(lobby);
             roomRepository.save(room);
             return "New room is created";
         }
         catch (Exception e){
-            return e.getMessage();
+            return "Error";
         }
     }
 
@@ -64,5 +60,19 @@ public class UserServiceImpl implements UserService {
         room.getUserList().add(user);
         roomRepository.save(room);
         return userDto.getUsername() + "join room successfully";
+    }
+
+    @Override
+    public List<CreateRoomDto> getAllRoom() {
+        List<Room> roomList = roomRepository.findAll();
+        List<CreateRoomDto> createRoomDtoList = new ArrayList<>();
+        for (Room room : roomList){
+            CreateRoomDto roomDto = new CreateRoomDto();
+            roomDto.setRoomId(room.getRoomId());
+            roomDto.setTypeMoney(room.getTypeMoney());
+            roomDto.setNumberPeople(room.getUserList().size());
+            createRoomDtoList.add(roomDto);
+        }
+        return createRoomDtoList;
     }
 }
