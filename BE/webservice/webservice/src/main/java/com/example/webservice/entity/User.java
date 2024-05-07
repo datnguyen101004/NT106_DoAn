@@ -45,7 +45,4 @@ public class User{
     private int matchLose;
 
     private double money;
-
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "userList")
-    private List<Room> roomList;
 }
