@@ -1,11 +1,14 @@
 ﻿
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Net.Http;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,23 +19,15 @@ namespace DoAnNT106
     public partial class Lobby : Form
     {
         bool sidebarExpand;
-        public Lobby()
+        public Lobby(String message)
         {
             InitializeComponent();
+            label2.Text = message;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CheckForIllegalCrossThreadCalls = false;
-            Thread clientThread = new Thread(new ThreadStart(client));
-            clientThread.Start();
-        }
-
-
-
-        private void client()
-        {
-            Application.Run(new Play());
+            updateRoom();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -67,12 +62,71 @@ namespace DoAnNT106
             }
         }
 
+        private static HttpClient httpClient = new HttpClient()
+        {
+            BaseAddress = new Uri("http://localhost:8080")
+        };
+
         private void bt_info_Click(object sender, EventArgs e)
         {
             Info frmInfo = new Info();
+            frmInfo.Hide();
             frmInfo.ShowDialog();
-            frmInfo = null;
-            this.Show();
+        }
+
+        private async void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Random random = new Random();
+                CreateRoom newRoom = new CreateRoom();
+                newRoom.username = label2.Text;
+                newRoom.roomId = random.Next(1000, 9999).ToString();
+                newRoom.typeMoney = 100;
+                newRoom.numberPeople = 1;
+                String request = JsonConvert.SerializeObject(newRoom);
+                HttpContent httpContent = new StringContent(request, Encoding.UTF8, "application/json");
+                HttpResponseMessage httpResponseMessage = await httpClient.PostAsync("/user/createRoom", httpContent);
+                String result = await httpResponseMessage.Content.ReadAsStringAsync();
+                MessageBox.Show(result);
+                Play pl = new Play(newRoom.roomId);
+                pl.Hide();
+                pl.ShowDialog();
+                ListViewItem item = new ListViewItem(newRoom.roomId);
+                item.SubItems.Add(newRoom.typeMoney.ToString());
+                item.SubItems.Add(newRoom.numberPeople.ToString());
+                listView1.Items.Add(item);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            button1.Enabled = true;
+        }
+
+        private async void Lobby_Load(object sender, EventArgs e)
+        {
+            button1.Enabled = false;
+            updateRoom();
+            
+        }
+
+        private async void updateRoom()
+        {
+            HttpResponseMessage roomResponse = await httpClient.GetAsync("/user/allRoom");
+            String allRoom = await roomResponse.Content.ReadAsStringAsync();
+            var allRoomJson = JsonConvert.DeserializeObject<List<CreateRoom>>(allRoom);
+            foreach (CreateRoom roomJson in allRoomJson)
+            {
+                ListViewItem item = new ListViewItem(roomJson.roomId);
+                item.SubItems.Add(roomJson.typeMoney.ToString());
+                item.SubItems.Add(roomJson.numberPeople.ToString());
+                listView1.Items.Add(item);
+            }
         }
     }
 }

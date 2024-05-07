@@ -33,24 +33,40 @@ namespace DoAnNT106
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            String email = textBox1.Text;
-            String password = textBox2.Text;
-            User user = new User();
-            user.email = email;
-            user.password = password;
-            String json = JsonConvert.SerializeObject(user);
-            HttpContent content = new StringContent(json, Encoding.UTF8, "application/json");
-            HttpResponseMessage httpResponseMessage = await httpClient.PostAsync("/auth/login", content);
-            if (httpResponseMessage.IsSuccessStatusCode)
+            try
             {
-                String message = await httpResponseMessage.Content.ReadAsStringAsync();
-                MessageBox.Show(message);
-                Lobby lobby = new Lobby();
-                lobby.ShowDialog();
+                String email = textBox1.Text;
+                String password = textBox2.Text;
+                User user = new User();
+                user.email = email;
+                user.password = password;
+                String json = JsonConvert.SerializeObject(user);
+                HttpContent content = new StringContent(json, Encoding.UTF8, "application/json");
+                HttpResponseMessage httpResponseMessage = await httpClient.PostAsync("/auth/login", content);
+                if (httpResponseMessage.IsSuccessStatusCode)
+                {
+                    String message = await httpResponseMessage.Content.ReadAsStringAsync();
+                    if (!message.Contains("error"))
+                    {
+                        MessageBox.Show(message);
+                        Lobby lobby = new Lobby(message);
+                        lobby.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show(message);
+                        Lobby lobby = new Lobby(user.email);
+                        lobby.ShowDialog();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("login fail");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("login fail");
+                MessageBox.Show(ex.Message);
             }
         }
 

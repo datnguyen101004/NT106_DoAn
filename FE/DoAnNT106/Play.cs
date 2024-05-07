@@ -21,7 +21,7 @@ namespace DoAnNT106
         TcpClient tcpClient = new TcpClient();
         StreamWriter sw;
         StreamReader sr;
-        public Play()
+        public Play(String roomId)
         {
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
@@ -36,6 +36,7 @@ namespace DoAnNT106
             {
                 MessageBox.Show(ex.Message);
             }
+            label1.Text = "Phòng " + roomId;
         }
 
         private void btnSendMessage_Click(object sender, EventArgs e)
