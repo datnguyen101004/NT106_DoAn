@@ -2,7 +2,7 @@ package com.example.webservice.service.impl;
 
 import com.example.webservice.dto.CreateRoomDto;
 import com.example.webservice.dto.UserChangePassword;
-import com.example.webservice.dto.UserDto;
+import com.example.webservice.dto.JoinRoomDto;
 
 import com.example.webservice.entity.Room;
 import com.example.webservice.entity.User;
@@ -54,12 +54,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String joinRoom(UserDto userDto) throws Exception {
-        User user = userRepository.findByUsername(userDto.getUsername()).orElseThrow(() -> new Exception("Cannot find username"));
-        Room room = roomRepository.findByRoomId(userDto.getRoomId());
+    public String joinRoom(JoinRoomDto joinRoomDto) throws Exception {
+        User user = userRepository.findByUsername(joinRoomDto.getUsername()).orElseThrow(() -> new Exception("Cannot find username"));
+        Room room = roomRepository.findByRoomId(joinRoomDto.getRoomId());
         room.getUserList().add(user);
         roomRepository.save(room);
-        return userDto.getUsername() + "join room successfully";
+        return joinRoomDto.getUsername() + "join room successfully";
     }
 
     @Override

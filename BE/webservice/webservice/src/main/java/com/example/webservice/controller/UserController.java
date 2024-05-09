@@ -2,9 +2,7 @@ package com.example.webservice.controller;
 
 import com.example.webservice.dto.CreateRoomDto;
 import com.example.webservice.dto.UserChangePassword;
-import com.example.webservice.dto.UserDto;
-import com.example.webservice.entity.Room;
-import com.example.webservice.service.AuthService;
+import com.example.webservice.dto.JoinRoomDto;
 import com.example.webservice.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -30,8 +28,8 @@ public class UserController {
     }
 
     @PostMapping("/joinRoom")
-    public ResponseEntity<String> joinRoom(@RequestBody UserDto userDto) throws Exception {
-        return ResponseEntity.ok().body(userService.joinRoom(userDto));
+    public ResponseEntity<String> joinRoom(@RequestBody JoinRoomDto joinRoomDto) throws Exception {
+        return ResponseEntity.ok().body(userService.joinRoom(joinRoomDto));
     }
 
     @GetMapping("/allRoom")
