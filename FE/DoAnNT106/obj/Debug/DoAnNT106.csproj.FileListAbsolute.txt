@@ -1,0 +1,17 @@
+E:\HK2_2024\LT_network\clone\NT106_DoAn\FE\DoAnNT106\bin\Debug\DoAnNT106.exe.config
+E:\HK2_2024\LT_network\clone\NT106_DoAn\FE\DoAnNT106\bin\Debug\DoAnNT106.exe
+E:\HK2_2024\LT_network\clone\NT106_DoAn\FE\DoAnNT106\bin\Debug\DoAnNT106.pdb
+E:\HK2_2024\LT_network\clone\NT106_DoAn\FE\DoAnNT106\bin\Debug\Newtonsoft.Json.dll
+E:\HK2_2024\LT_network\clone\NT106_DoAn\FE\DoAnNT106\bin\Debug\Newtonsoft.Json.xml
+E:\HK2_2024\LT_network\clone\NT106_DoAn\FE\DoAnNT106\obj\Debug\DoAnNT106.csproj.AssemblyReference.cache
+E:\HK2_2024\LT_network\clone\NT106_DoAn\FE\DoAnNT106\obj\Debug\DoAnNT106.Info.resources
+E:\HK2_2024\LT_network\clone\NT106_DoAn\FE\DoAnNT106\obj\Debug\DoAnNT106.Login.resources
+E:\HK2_2024\LT_network\clone\NT106_DoAn\FE\DoAnNT106\obj\Debug\DoAnNT106.Lobby.resources
+E:\HK2_2024\LT_network\clone\NT106_DoAn\FE\DoAnNT106\obj\Debug\DoAnNT106.Play.resources
+E:\HK2_2024\LT_network\clone\NT106_DoAn\FE\DoAnNT106\obj\Debug\DoAnNT106.Properties.Resources.resources
+E:\HK2_2024\LT_network\clone\NT106_DoAn\FE\DoAnNT106\obj\Debug\DoAnNT106.signup.resources
+E:\HK2_2024\LT_network\clone\NT106_DoAn\FE\DoAnNT106\obj\Debug\DoAnNT106.csproj.GenerateResource.cache
+E:\HK2_2024\LT_network\clone\NT106_DoAn\FE\DoAnNT106\obj\Debug\DoAnNT106.csproj.CoreCompileInputs.cache
+E:\HK2_2024\LT_network\clone\NT106_DoAn\FE\DoAnNT106\obj\Debug\DoAnNT106.csproj.Up2Date
+E:\HK2_2024\LT_network\clone\NT106_DoAn\FE\DoAnNT106\obj\Debug\DoAnNT106.exe
+E:\HK2_2024\LT_network\clone\NT106_DoAn\FE\DoAnNT106\obj\Debug\DoAnNT106.pdb
