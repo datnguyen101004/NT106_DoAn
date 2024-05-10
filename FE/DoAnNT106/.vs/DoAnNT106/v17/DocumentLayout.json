@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\DoAnNT106\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|e:\\hk2_2024\\lt_network\\project\\nt106_doan\\fe\\doannt106\\lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|e:\\hk2_2024\\lt_network\\project\\nt106_doan\\fe\\doannt106\\play.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:play.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\DoAnNT106\\play.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:play.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\DoAnNT106\\lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -15,8 +19,8 @@
       "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:play.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\DoAnNT106\\play.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:play.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|e:\\hk2_2024\\lt_network\\project\\nt106_doan\\fe\\doannt106\\lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,49 +39,65 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Play.Designer.cs",
+              "DocumentMoniker": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\DoAnNT106\\Play.Designer.cs",
+              "RelativeDocumentMoniker": "Play.Designer.cs",
+              "ToolTip": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\DoAnNT106\\Play.Designer.cs",
+              "RelativeToolTip": "Play.Designer.cs",
+              "ViewState": "AQIAAE4AAAAAAAAAAAAvwF8AAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-10T06:00:45.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Lobby.cs",
               "DocumentMoniker": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\DoAnNT106\\Lobby.cs",
               "RelativeDocumentMoniker": "Lobby.cs",
               "ToolTip": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\DoAnNT106\\Lobby.cs",
               "RelativeToolTip": "Lobby.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAvwBcAAAAiAAAA",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAjwB0AAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-10T04:52:36.974Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Lobby.cs [Design]",
               "DocumentMoniker": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\DoAnNT106\\Lobby.cs",
               "RelativeDocumentMoniker": "Lobby.cs",
               "ToolTip": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\DoAnNT106\\Lobby.cs [Design]",
               "RelativeToolTip": "Lobby.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T04:52:35.434Z"
+              "WhenOpened": "2024-05-10T04:52:35.434Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Play.cs",
               "DocumentMoniker": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\DoAnNT106\\Play.cs",
               "RelativeDocumentMoniker": "Play.cs",
               "ToolTip": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\DoAnNT106\\Play.cs",
               "RelativeToolTip": "Play.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAE4AAAAAAAAA",
+              "ViewState": "AQIAAEQAAAAAAAAAAAAgwFAAAAA+AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T04:52:09.868Z"
+              "WhenOpened": "2024-05-10T04:52:09.868Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Play.cs [Design]",
               "DocumentMoniker": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\DoAnNT106\\Play.cs",
               "RelativeDocumentMoniker": "Play.cs",
               "ToolTip": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\DoAnNT106\\Play.cs [Design]",
               "RelativeToolTip": "Play.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-10T04:52:07.4Z"
+              "WhenOpened": "2024-05-10T04:52:07.4Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

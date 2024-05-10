@@ -1,4 +1,6 @@
-﻿namespace DoAnNT106
+﻿using System;
+
+namespace DoAnNT106
 {
     partial class Play
     {
@@ -156,6 +158,11 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion
