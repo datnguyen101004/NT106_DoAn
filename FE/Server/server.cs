@@ -63,6 +63,7 @@ namespace Server
                 StreamReader reader = new StreamReader(client.GetStream());
                 StreamWriter writer = new StreamWriter(client.GetStream());
                 writer.AutoFlush = true;
+                List<string> messages = new List<string>();
                 while (true)
                 {
                     string message = reader.ReadLine();
@@ -70,6 +71,28 @@ namespace Server
                     {
                         BroadcastMessage(message);
                         richTextBox1.AppendText(message + "\r\n");
+                        if (message.Contains("choose"))
+                        {
+                            messages.Add(message);
+                            if (messages.Count == 2)
+                            {
+                                int choose1 = int.Parse(messages[0].Substring(messages[0].Length - 1));
+                                int choose2 = int.Parse(messages[1].Substring(messages[1].Length - 1));
+                                if (choose1 > choose2)
+                                {
+                                    BroadcastMessage("Result: Player1 win");
+                                }
+                                else if (choose2 > choose1)
+                                {
+                                    BroadcastMessage("Result: Player2 win");
+                                }
+                                else
+                                {
+                                    BroadcastMessage("Result: Equal");
+                                }
+                                messages.Clear();
+                            }
+                        }
                     }
                 }
             }

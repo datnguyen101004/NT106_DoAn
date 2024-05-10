@@ -25,8 +25,21 @@ namespace DoAnNT106
             label2.Text = message;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            var joinRoomDto = new
+            {
+                username = label2.Text,
+                roomId = listView1.SelectedItems[0].Text,
+            };
+            String joinRoomDtoJson = JsonConvert.SerializeObject(joinRoomDto);
+            HttpContent httpContent = new StringContent(joinRoomDtoJson, Encoding.UTF8, "application/json");
+            HttpResponseMessage httpResponseMessage = await httpClient.PostAsync("/user/joinRoom", httpContent);
+            Play pl = new Play(listView1.SelectedItems[0].Text);
+            pl.Hide();
+            pl.ShowDialog();
+            this.Show();
             updateRoom();
         }
 
@@ -89,13 +102,16 @@ namespace DoAnNT106
                 HttpResponseMessage httpResponseMessage = await httpClient.PostAsync("/user/createRoom", httpContent);
                 String result = await httpResponseMessage.Content.ReadAsStringAsync();
                 MessageBox.Show(result);
-                Play pl = new Play(newRoom.roomId);
-                pl.Hide();
-                pl.ShowDialog();
                 ListViewItem item = new ListViewItem(newRoom.roomId);
                 item.SubItems.Add(newRoom.typeMoney.ToString());
                 item.SubItems.Add(newRoom.numberPeople.ToString());
                 listView1.Items.Add(item);
+                this.Hide();
+                Play pl = new Play(newRoom.roomId);
+                pl.Hide();
+                pl.ShowDialog();
+                this.Show();
+                updateRoom();
             }
             catch (Exception ex)
             {
@@ -117,6 +133,7 @@ namespace DoAnNT106
 
         private async void updateRoom()
         {
+            listView1.Items.Clear();
             HttpResponseMessage roomResponse = await httpClient.GetAsync("/user/allRoom");
             String allRoom = await roomResponse.Content.ReadAsStringAsync();
             var allRoomJson = JsonConvert.DeserializeObject<List<CreateRoom>>(allRoom);

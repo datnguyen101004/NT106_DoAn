@@ -63,7 +63,7 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    public String login(AuthLoginDto authLoginDto) throws Exception {
+    public String login(AuthLoginDto authLoginDto){
         try {
             Optional<User> user = userRepository.findByEmail(authLoginDto.getEmail());
             if (user.isPresent()) {
