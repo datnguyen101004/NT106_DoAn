@@ -17,7 +17,6 @@ import org.springframework.stereotype.Service;
 import java.io.File;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.Random;
 import java.util.UUID;
 
 @Service
@@ -34,8 +33,6 @@ public class MailServiceImpl implements MailService {
     public String sendVerifyEmail(EmailDetail emailDetail){
         try {
             SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
-
-            EmailDetail _emailDetail = new EmailDetail();
             emailDetail.setSubject("Click the link to verify the account");
             emailDetail.setRecipient(emailDetail.getRecipient());
             String token = UUID.randomUUID().toString();
@@ -67,8 +64,6 @@ public class MailServiceImpl implements MailService {
     public String sendForgetMail(EmailDetail emailDetail) {
         try {
             SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
-
-            EmailDetail _emailDetail = new EmailDetail();
             emailDetail.setSubject("Click the link to restore the password");
             emailDetail.setRecipient(emailDetail.getRecipient());
             emailDetail.setMessage("http://localhost:8080/auth/forget?email=" + emailDetail.getRecipient());

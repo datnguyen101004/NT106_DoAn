@@ -26,9 +26,8 @@ public class Room {
     @Column(name = "type")
     private int typeMoney;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "room_user", joinColumns = @JoinColumn(name = "room_id", referencedColumnName = "id"),
-                                    inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "room_id", referencedColumnName = "id")
     private List<User> userList = new ArrayList<>();
 
 }
