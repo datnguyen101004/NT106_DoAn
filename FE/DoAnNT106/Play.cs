@@ -31,6 +31,9 @@ namespace DoAnNT106
                 tcpClient.Connect(iPEndPoint);
                 sw = new StreamWriter(tcpClient.GetStream());
                 sr = new StreamReader(tcpClient.GetStream());
+                sw.AutoFlush = true;
+                Thread receiveThread = new Thread(new ThreadStart(receiveMessage));
+                receiveThread.Start();
             }
             catch (Exception ex)
             {
@@ -43,12 +46,7 @@ namespace DoAnNT106
         {
             String message = richTextBox2.Text;
             //Send message
-            sw.AutoFlush = true;
-            sw.WriteLine(message);
-            sw.Flush();
-            //Receive message
-            Thread receiveThread = new Thread(new ThreadStart(receiveMessage));
-            receiveThread.Start();
+            sw.WriteLine(label1.Text + ": " + message);
         }
 
         private void receiveMessage()
@@ -58,7 +56,7 @@ namespace DoAnNT106
                 while (tcpClient.Connected)
                 {
                     String message = sr.ReadLine();
-                    if (message != null)
+                    if (message != null && (message.Contains(label1.Text) || message.Contains("Result")))
                     {
                         richTextBox1.AppendText(message + "\r\n");
                     }
@@ -66,12 +64,23 @@ namespace DoAnNT106
             }
             catch (Exception ex)
             {
-                return;
+                MessageBox.Show(ex.Message);
             }
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            sw.WriteLine(label1.Text + " choose : 1");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            sw.WriteLine(label1.Text + " choose : 2");
         }
     }
 }

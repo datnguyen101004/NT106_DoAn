@@ -1,0 +1,121 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\DoAnNT106\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A291BF4D-D377-4B00-A585-C64C0EC05A98}|..\\Server\\Server.csproj|e:\\hk2_2024\\lt_network\\project\\nt106_doan\\fe\\server\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A291BF4D-D377-4B00-A585-C64C0EC05A98}|..\\Server\\Server.csproj|e:\\hk2_2024\\lt_network\\project\\nt106_doan\\fe\\server\\server.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|e:\\hk2_2024\\lt_network\\project\\nt106_doan\\fe\\doannt106\\play.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:play.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|e:\\hk2_2024\\lt_network\\project\\nt106_doan\\fe\\doannt106\\play.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:play.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|e:\\hk2_2024\\lt_network\\project\\nt106_doan\\fe\\doannt106\\lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|e:\\hk2_2024\\lt_network\\project\\nt106_doan\\fe\\doannt106\\lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{9D15E1B1-B19B-4869-9EC9-0F1C2011D13C}|DoAnNT106.csproj|solutionrelative:lobby.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "server.cs",
+              "DocumentMoniker": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\Server\\server.cs",
+              "RelativeDocumentMoniker": "..\\Server\\server.cs",
+              "ToolTip": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\Server\\server.cs",
+              "RelativeToolTip": "..\\Server\\server.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAswE8AAABmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T17:39:58.798Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "server.cs [Design]",
+              "DocumentMoniker": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\Server\\server.cs",
+              "RelativeDocumentMoniker": "..\\Server\\server.cs",
+              "ToolTip": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\Server\\server.cs [Design]",
+              "RelativeToolTip": "..\\Server\\server.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T17:39:57.64Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Play.cs",
+              "DocumentMoniker": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\DoAnNT106\\Play.cs",
+              "RelativeDocumentMoniker": "Play.cs",
+              "ToolTip": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\DoAnNT106\\Play.cs",
+              "RelativeToolTip": "Play.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAAnwDwAAABCAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T17:14:28.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Play.cs [Design]",
+              "DocumentMoniker": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\DoAnNT106\\Play.cs",
+              "RelativeDocumentMoniker": "Play.cs",
+              "ToolTip": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\DoAnNT106\\Play.cs [Design]",
+              "RelativeToolTip": "Play.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T17:14:24.972Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Lobby.cs",
+              "DocumentMoniker": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\DoAnNT106\\Lobby.cs",
+              "RelativeDocumentMoniker": "Lobby.cs",
+              "ToolTip": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\DoAnNT106\\Lobby.cs",
+              "RelativeToolTip": "Lobby.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAABwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T15:53:18.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Lobby.cs [Design]",
+              "DocumentMoniker": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\DoAnNT106\\Lobby.cs",
+              "RelativeDocumentMoniker": "Lobby.cs",
+              "ToolTip": "E:\\HK2_2024\\LT_network\\Project\\NT106_DoAn\\FE\\DoAnNT106\\Lobby.cs [Design]",
+              "RelativeToolTip": "Lobby.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-09T15:53:16.899Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
