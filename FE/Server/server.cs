@@ -54,7 +54,7 @@ namespace Server
                 MessageBox.Show(ex.Message);
             }
         }
-
+        private List<string> messages = new List<string>();
         private void HandleClient(Object _client)
         {
             TcpClient client = (TcpClient)_client;
@@ -63,7 +63,6 @@ namespace Server
                 StreamReader reader = new StreamReader(client.GetStream());
                 StreamWriter writer = new StreamWriter(client.GetStream());
                 writer.AutoFlush = true;
-                List<string> messages = new List<string>();
                 while (true)
                 {
                     string message = reader.ReadLine();
@@ -81,19 +80,23 @@ namespace Server
                                 if (choose1 > choose2)
                                 {
                                     BroadcastMessage("Result: Player1 win");
+                                    richTextBox1.AppendText("Result: Player1 win");
                                 }
                                 else if (choose2 > choose1)
                                 {
                                     BroadcastMessage("Result: Player2 win");
+                                    richTextBox1.AppendText("Result: Player2 win");
                                 }
                                 else
                                 {
                                     BroadcastMessage("Result: Equal");
+                                    richTextBox1.AppendText("Result: Equal");
                                 }
                                 messages.Clear();
                             }
                         }
                     }
+                    Console.WriteLine(messages.Count);
                 }
             }
             catch (Exception ex)
