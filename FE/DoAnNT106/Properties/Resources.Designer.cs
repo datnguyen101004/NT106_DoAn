@@ -113,9 +113,39 @@ namespace DoAnNT106.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bao1 {
+        internal static System.Drawing.Bitmap card {
             get {
-                object obj = ResourceManager.GetObject("bao1", resourceCulture);
+                object obj = ResourceManager.GetObject("card", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cardbao {
+            get {
+                object obj = ResourceManager.GetObject("cardbao", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cardbua {
+            get {
+                object obj = ResourceManager.GetObject("cardbua", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cardkeo {
+            get {
+                object obj = ResourceManager.GetObject("cardkeo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,6 +223,16 @@ namespace DoAnNT106.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Remove_bg_ai_1717344063568 {
+            get {
+                object obj = ResourceManager.GetObject("Remove_bg_ai_1717344063568", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ROCK {
             get {
                 object obj = ResourceManager.GetObject("ROCK", resourceCulture);
@@ -203,29 +243,9 @@ namespace DoAnNT106.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ROCK1 {
-            get {
-                object obj = ResourceManager.GetObject("ROCK1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Scissors {
             get {
                 object obj = ResourceManager.GetObject("Scissors", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Scissors1 {
-            get {
-                object obj = ResourceManager.GetObject("Scissors1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,9 +283,29 @@ namespace DoAnNT106.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap WELCOME__12_1 {
+        internal static System.Drawing.Bitmap WELCOME__12_ {
             get {
-                object obj = ResourceManager.GetObject("WELCOME__12_1", resourceCulture);
+                object obj = ResourceManager.GetObject("WELCOME (12)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WELCOME__9_ {
+            get {
+                object obj = ResourceManager.GetObject("WELCOME (9)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z5501262931520_7bee6e41ac73becbede9ef81e63bc14f {
+            get {
+                object obj = ResourceManager.GetObject("z5501262931520_7bee6e41ac73becbede9ef81e63bc14f", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

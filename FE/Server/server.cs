@@ -23,6 +23,33 @@ namespace Server
             InitializeComponent();
         }
 
+        //Handle the choosen of 2 people
+        private String handleResult(String choose1, String choose2)
+        {
+            if (choose1 == null || choose2 == null)
+            {
+                if (choose1.ToLower().Equals("kéo"))
+                {
+                    if (choose2.ToLower().Equals("kéo")) return "Hòa";
+                    if (choose2.ToLower().Equals("búa")) return "Player1 Thua";
+                    if (choose2.ToLower().Equals("bao")) return "Player1 Thắng";
+                }
+                if (choose1.ToLower().Equals("búa"))
+                {
+                    if (choose2.ToLower().Equals("kéo")) return "Player1 Thắng";
+                    if (choose2.ToLower().Equals("búa")) return "Player1 Hòa";
+                    if (choose2.ToLower().Equals("bao")) return "Player1 Thua";
+                }
+                if (choose1.ToLower().Equals("bao"))
+                {
+                    if (choose2.ToLower().Equals("kéo")) return "Player1 Thua";
+                    if (choose2.ToLower().Equals("búa")) return "Player1 Thắng";
+                    if (choose2.ToLower().Equals("bao")) return "Player1 Hòa";
+                }
+            }
+            return null;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             CheckForIllegalCrossThreadCalls = false;

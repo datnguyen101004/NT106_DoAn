@@ -39,11 +39,26 @@
             this.button4 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label2 = new System.Windows.Forms.Label();
+=======
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+>>>>>>> dd35286b38751a8b47eb1f96b13bc645c94a0678
             this.SuspendLayout();
             // 
             // richTextBox1
             // 
+<<<<<<< HEAD
+            this.richTextBox1.Location = new System.Drawing.Point(809, 344);
+=======
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.richTextBox1.Location = new System.Drawing.Point(809, 347);
+>>>>>>> dd35286b38751a8b47eb1f96b13bc645c94a0678
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(450, 285);
             this.richTextBox1.TabIndex = 0;
@@ -51,6 +66,7 @@
             // 
             // richTextBox2
             // 
+            this.richTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox2.Location = new System.Drawing.Point(809, 626);
             this.richTextBox2.Name = "richTextBox2";
@@ -60,17 +76,22 @@
             // 
             // btnSendMessage
             // 
+            this.btnSendMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnSendMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSendMessage.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSendMessage.Location = new System.Drawing.Point(1165, 626);
             this.btnSendMessage.Name = "btnSendMessage";
             this.btnSendMessage.Size = new System.Drawing.Size(94, 45);
             this.btnSendMessage.TabIndex = 2;
             this.btnSendMessage.Text = "Send";
-            this.btnSendMessage.UseVisualStyleBackColor = true;
+            this.btnSendMessage.UseVisualStyleBackColor = false;
             this.btnSendMessage.Click += new System.EventHandler(this.btnSendMessage_Click);
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(1118, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(132, 54);
@@ -81,6 +102,8 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Image = global::DoAnNT106.Properties.Resources.Scissors;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -90,13 +113,15 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "Kéo";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = global::DoAnNT106.Properties.Resources.ROCK;
+            this.button3.Image = global::DoAnNT106.Properties.Resources.Remove_bg_ai_1717344063568;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(149, 597);
             this.button3.Name = "button3";
@@ -104,11 +129,13 @@
             this.button3.TabIndex = 5;
             this.button3.Text = "Búa";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Image = global::DoAnNT106.Properties.Resources.bao;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -118,7 +145,12 @@
             this.button4.TabIndex = 6;
             this.button4.Text = "Bao";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+<<<<<<< HEAD
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+=======
+            this.button4.UseVisualStyleBackColor = false;
+>>>>>>> dd35286b38751a8b47eb1f96b13bc645c94a0678
             // 
             // imageList1
             // 
@@ -131,18 +163,74 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(22, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 20);
+            this.label1.Size = new System.Drawing.Size(96, 20);
             this.label1.TabIndex = 7;
-            this.label1.Text = "RoomId";
+            this.label1.Text = "ROOM ID:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::DoAnNT106.Properties.Resources.cardbao;
+            this.pictureBox1.Location = new System.Drawing.Point(513, 410);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(175, 250);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::DoAnNT106.Properties.Resources.card;
+            this.pictureBox2.Location = new System.Drawing.Point(513, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(175, 250);
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(26, 71);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(175, 484);
+            this.listView1.TabIndex = 8;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "HISTORY";
+            this.columnHeader1.Width = 241;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(556, 637);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 20);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Username";
             // 
             // Play
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(227)))), ((int)(((byte)(212)))));
+            this.BackgroundImage = global::DoAnNT106.Properties.Resources.nen;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+<<<<<<< HEAD
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.listView1);
+=======
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
+>>>>>>> dd35286b38751a8b47eb1f96b13bc645c94a0678
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -152,7 +240,9 @@
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.richTextBox1);
             this.Name = "Play";
-            this.Text = "git ";
+            this.Text = " ";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,5 +259,13 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Label label1;
+<<<<<<< HEAD
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Label label2;
+=======
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+>>>>>>> dd35286b38751a8b47eb1f96b13bc645c94a0678
     }
 }
