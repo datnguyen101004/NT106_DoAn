@@ -7,6 +7,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.ColumnDefault;
 
 import java.util.List;
 
@@ -39,10 +40,11 @@ public class User{
     private String verifyToken;
 
     @Column(name = "win")
+    @ColumnDefault("0")
     private int matchWin;
-
+    @ColumnDefault("0")
     @Column(name = "lose")
     private int matchLose;
-
+    @ColumnDefault("500")
     private double money;
 }

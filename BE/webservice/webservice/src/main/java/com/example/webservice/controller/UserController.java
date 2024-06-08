@@ -1,6 +1,7 @@
 package com.example.webservice.controller;
 
 import com.example.webservice.dto.CreateRoomDto;
+import com.example.webservice.dto.RoomDto;
 import com.example.webservice.dto.UserChangePassword;
 import com.example.webservice.dto.JoinRoomDto;
 import com.example.webservice.service.UserService;
@@ -35,5 +36,15 @@ public class UserController {
     @GetMapping("/allRoom")
     public ResponseEntity<List<CreateRoomDto>> getAllRoom(){
         return ResponseEntity.ok().body(userService.getAllRoom());
+    }
+
+    @PostMapping("/{username}/win")
+    public ResponseEntity<String> win(@PathVariable String username, @RequestBody RoomDto roomDto) throws Exception {
+        return ResponseEntity.ok(userService.win(username, roomDto.getType()));
+    }
+
+    @PostMapping("/{username}/lose")
+    public ResponseEntity<String> lose(@PathVariable String username, @RequestBody RoomDto roomDto) throws Exception {
+        return ResponseEntity.ok(userService.lose(username, roomDto.getType()));
     }
 }

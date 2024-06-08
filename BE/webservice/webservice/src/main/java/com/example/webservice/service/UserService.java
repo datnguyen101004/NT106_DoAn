@@ -14,4 +14,8 @@ public interface UserService {
     String joinRoom(JoinRoomDto joinRoomDto) throws Exception;
 
     List<CreateRoomDto> getAllRoom();
+
+    String win(String username, int type) throws Exception;
+
+    String lose(String username, int type) throws Exception;
 }

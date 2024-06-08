@@ -75,4 +75,25 @@ public class UserServiceImpl implements UserService {
         }
         return createRoomDtoList;
     }
+
+    @Override
+    public String lose(String username, int type) throws Exception {
+        User user = userRepository.findByUsername(username).orElseThrow(() -> new Exception("Cannot find username"));
+        double money = user.getMoney() - type;
+        if (money < 0){
+            return "You don't have enough money";
+        }
+        user.setMoney(money);
+        userRepository.save(user);
+        return "${username} win";
+    }
+
+    @Override
+    public String win(String username, int type) throws Exception {
+        User user = userRepository.findByUsername(username).orElseThrow(() -> new Exception("Cannot find username"));
+        double money = user.getMoney() + type;
+        user.setMoney(money);
+        userRepository.save(user);
+        return "${username} lose";
+    }
 }
