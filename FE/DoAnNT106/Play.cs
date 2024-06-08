@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace DoAnNT106
         TcpClient tcpClient = new TcpClient();
         StreamWriter sw;
         StreamReader sr;
-        public Play(String roomId)
+        public Play(String roomId, String username)
         {
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
@@ -40,6 +41,7 @@ namespace DoAnNT106
                 MessageBox.Show(ex.Message);
             }
             label1.Text = "Phòng " + roomId;
+            label2.Text = username;
         }
 
         private void btnSendMessage_Click(object sender, EventArgs e)
@@ -75,12 +77,22 @@ namespace DoAnNT106
 
         private void button2_Click(object sender, EventArgs e)
         {
-            sw.WriteLine(label1.Text + " choose : 1");
+            sw.WriteLine(label1.Text + " choose : kéo");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            sw.WriteLine(label1.Text + " choose : 2");
+            sw.WriteLine(label1.Text + " choose : búa");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            sw.WriteLine(label1.Text + " choose : bao");
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

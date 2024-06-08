@@ -39,11 +39,14 @@
             this.button4 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(809, 347);
+            this.richTextBox1.Location = new System.Drawing.Point(809, 344);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(450, 285);
             this.richTextBox1.TabIndex = 0;
@@ -119,6 +122,7 @@
             this.button4.Text = "Bao";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // imageList1
             // 
@@ -138,11 +142,41 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "RoomId";
             // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(26, 71);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(175, 484);
+            this.listView1.TabIndex = 8;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "HISTORY";
+            this.columnHeader1.Width = 241;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(556, 637);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 20);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "Username";
+            // 
             // Play
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -169,5 +203,8 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Label label2;
     }
 }

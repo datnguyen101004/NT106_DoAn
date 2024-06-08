@@ -36,7 +36,7 @@ namespace DoAnNT106
             String joinRoomDtoJson = JsonConvert.SerializeObject(joinRoomDto);
             HttpContent httpContent = new StringContent(joinRoomDtoJson, Encoding.UTF8, "application/json");
             HttpResponseMessage httpResponseMessage = await httpClient.PostAsync("/user/joinRoom", httpContent);
-            Play pl = new Play(listView1.SelectedItems[0].Text);
+            Play pl = new Play(listView1.SelectedItems[0].Text, label2.Text);
             pl.Hide();
             pl.ShowDialog();
             this.Show();
@@ -107,7 +107,7 @@ namespace DoAnNT106
                 item.SubItems.Add(newRoom.numberPeople.ToString());
                 listView1.Items.Add(item);
                 this.Hide();
-                Play pl = new Play(newRoom.roomId);
+                Play pl = new Play(newRoom.roomId, label2.Text);
                 pl.Hide();
                 pl.ShowDialog();
                 this.Show();
