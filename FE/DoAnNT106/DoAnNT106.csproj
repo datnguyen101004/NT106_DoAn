@@ -204,5 +204,17 @@
   <ItemGroup>
     <None Include="Resources\Remove-bg.ai_1717344063568.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cardbao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cardbua.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cardkeo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

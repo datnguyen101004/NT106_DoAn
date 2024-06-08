@@ -41,7 +41,7 @@
             this.button2.FlatAppearance.BorderSize = 2;
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LimeGreen;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(356, 496);
             this.button2.Name = "button2";
@@ -86,7 +86,7 @@
             this.button1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(373, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 36);
+            this.button1.Size = new System.Drawing.Size(106, 42);
             this.button1.TabIndex = 15;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = false;
