@@ -50,7 +50,6 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(809, 344);
             this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.richTextBox1.Location = new System.Drawing.Point(809, 347);
             this.richTextBox1.Name = "richTextBox1";
@@ -139,9 +138,8 @@
             this.button4.TabIndex = 6;
             this.button4.Text = "Bao";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // imageList1
             // 
@@ -161,24 +159,6 @@
             this.label1.Size = new System.Drawing.Size(96, 20);
             this.label1.TabIndex = 7;
             this.label1.Text = "ROOM ID:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::DoAnNT106.Properties.Resources.cardbao;
-            this.pictureBox1.Location = new System.Drawing.Point(513, 410);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(175, 250);
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::DoAnNT106.Properties.Resources.card;
-            this.pictureBox2.Location = new System.Drawing.Point(513, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(175, 250);
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
             // 
             // listView1
             // 
@@ -207,6 +187,24 @@
             this.label2.Size = new System.Drawing.Size(86, 20);
             this.label2.TabIndex = 9;
             this.label2.Text = "Username";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::DoAnNT106.Properties.Resources.cardbao;
+            this.pictureBox1.Location = new System.Drawing.Point(513, 384);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(175, 250);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::DoAnNT106.Properties.Resources.card;
+            this.pictureBox2.Location = new System.Drawing.Point(513, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(175, 250);
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
             // 
             // Play
             // 
