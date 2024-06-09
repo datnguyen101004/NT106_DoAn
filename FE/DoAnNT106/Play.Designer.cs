@@ -39,26 +39,20 @@
             this.button4 = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label1 = new System.Windows.Forms.Label();
-<<<<<<< HEAD
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label2 = new System.Windows.Forms.Label();
-=======
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
->>>>>>> dd35286b38751a8b47eb1f96b13bc645c94a0678
             this.SuspendLayout();
             // 
             // richTextBox1
             // 
-<<<<<<< HEAD
             this.richTextBox1.Location = new System.Drawing.Point(809, 344);
-=======
             this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.richTextBox1.Location = new System.Drawing.Point(809, 347);
->>>>>>> dd35286b38751a8b47eb1f96b13bc645c94a0678
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(450, 285);
             this.richTextBox1.TabIndex = 0;
@@ -145,12 +139,9 @@
             this.button4.TabIndex = 6;
             this.button4.Text = "Bao";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-<<<<<<< HEAD
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
-=======
             this.button4.UseVisualStyleBackColor = false;
->>>>>>> dd35286b38751a8b47eb1f96b13bc645c94a0678
             // 
             // imageList1
             // 
@@ -224,13 +215,10 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(227)))), ((int)(((byte)(212)))));
             this.BackgroundImage = global::DoAnNT106.Properties.Resources.nen;
             this.ClientSize = new System.Drawing.Size(1262, 673);
-<<<<<<< HEAD
             this.Controls.Add(this.label2);
             this.Controls.Add(this.listView1);
-=======
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
->>>>>>> dd35286b38751a8b47eb1f96b13bc645c94a0678
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -259,13 +247,10 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Label label1;
-<<<<<<< HEAD
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Label label2;
-=======
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
->>>>>>> dd35286b38751a8b47eb1f96b13bc645c94a0678
     }
 }
