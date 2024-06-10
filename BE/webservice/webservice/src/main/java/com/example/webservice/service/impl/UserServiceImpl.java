@@ -89,6 +89,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public double getMoney(String username) {
+        User user = userRepository.findByUsername(username).orElse(null);
+        return user.getMoney();
+    }
+
+    @Override
     public String win(String username, int type) throws Exception {
         User user = userRepository.findByUsername(username).orElseThrow(() -> new Exception("Cannot find username"));
         double money = user.getMoney() + type;
