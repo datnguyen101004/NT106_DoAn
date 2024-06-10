@@ -43,8 +43,6 @@ namespace DoAnNT106
                 sw.AutoFlush = true;
                 sendMessage(username + " connected");
                 getMoney();
-                Thread received = new Thread(new ThreadStart(receivedMessage));
-                received.Start();
             }
             catch (Exception ex)
             {
@@ -79,7 +77,14 @@ namespace DoAnNT106
                     Console.WriteLine(notification);
                     if (notification != null  && (notification.ToLower().Contains("join") || notification.ToLower().Contains("out")))
                     {
-                        updateRoom();
+                        if (this.InvokeRequired)
+                        {
+                            this.Invoke(new Action(updateRoom));
+                        }
+                        else
+                        {
+                            updateRoom();
+                        }
                     }
                 }
             }
@@ -216,22 +221,50 @@ namespace DoAnNT106
         {
             button1.Enabled = false;
             updateRoom();
-
+            Thread received = new Thread(new ThreadStart(receivedMessage));
+            received.IsBackground = true;
+            received.Start();
         }
 
         public async void updateRoom()
         {
-            listView1.Items.Clear();
-            HttpResponseMessage roomResponse = await httpClient.GetAsync("/user/allRoom");
-            String allRoom = await roomResponse.Content.ReadAsStringAsync();
-            var allRoomJson = JsonConvert.DeserializeObject<List<CreateRoom>>(allRoom);
-            foreach (CreateRoom roomJson in allRoomJson)
+            try
             {
-                ListViewItem item = new ListViewItem(roomJson.roomId);
-                item.SubItems.Add(roomJson.typeMoney.ToString());
-                item.SubItems.Add(roomJson.numberPeople.ToString());
-                listView1.Items.Add(item);
+                var roomResponse = await httpClient.GetAsync("/user/allRoom");
+                var allRoom = await roomResponse.Content.ReadAsStringAsync();
+                var allRoomJson = JsonConvert.DeserializeObject<List<CreateRoom>>(allRoom);
+
+                if (listView1.InvokeRequired)
+                {
+                    listView1.Invoke(new Action(() =>
+                    {
+                        listView1.Items.Clear();
+                        foreach (var roomJson in allRoomJson)
+                        {
+                            var item = new ListViewItem(roomJson.roomId);
+                            item.SubItems.Add(roomJson.typeMoney.ToString());
+                            item.SubItems.Add(roomJson.numberPeople.ToString());
+                            listView1.Items.Add(item);
+                        }
+                    }));
+                }
+                else
+                {
+                    listView1.Items.Clear();
+                    foreach (var roomJson in allRoomJson)
+                    {
+                        var item = new ListViewItem(roomJson.roomId);
+                        item.SubItems.Add(roomJson.typeMoney.ToString());
+                        item.SubItems.Add(roomJson.numberPeople.ToString());
+                        listView1.Items.Add(item);
+                    }
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

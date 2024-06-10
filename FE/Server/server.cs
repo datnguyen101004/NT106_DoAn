@@ -67,10 +67,6 @@ namespace Server
                 {
                     TcpClient clientSocket = serverSocket.AcceptTcpClient();
                     clientsList.Add(clientSocket);
-                    if (clientSocket.Connected)
-                    {
-                        richTextBox1.AppendText("New client connected" + "\r\n");
-                    }
                     Thread clientThread = new Thread(new ParameterizedThreadStart(HandleClient));
                     clientThread.IsBackground = true;
                     clientThread.Start(clientSocket);
@@ -92,7 +88,7 @@ namespace Server
                 writer.AutoFlush = true;
                 while (true)
                 {
-                    string message = reader.ReadToEnd();
+                    string message = reader.ReadLine();
                     if (message != null)
                     {
                         BroadcastMessage(message);

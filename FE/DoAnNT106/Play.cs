@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Net.Sockets;
 using System.Reflection.Emit;
 using System.Text;
@@ -127,8 +129,32 @@ namespace DoAnNT106
             }
         }
 
+        private static HttpClient httpClient = new HttpClient()
+        {
+            BaseAddress = new Uri("http://localhost:8080")
+        };
+
+        private async void handleOutRoom(String username, String roomId)
+        {
+            try
+            {
+                var outRoomDto = new Dictionary<String, String>();
+                outRoomDto.Add("username", username);
+                outRoomDto.Add("roomId", roomId);
+                String outRoomDtoJson = JsonConvert.SerializeObject(outRoomDto);
+                HttpContent httpContent = new StringContent(outRoomDtoJson, Encoding.UTF8, "application/json");
+                HttpResponseMessage httpResponseMessage = await httpClient.PostAsync("/user/outRoom", httpContent);
+            }
+            catch (Exception e) 
+            { 
+                MessageBox.Show(e.Message);
+            }
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
+            handleOutRoom(label2.Text, label1.Text);
+            sendMessage(label1.Text + ":" + label2.Text + " out room");
             Close();
         }
 
