@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -16,39 +17,50 @@ namespace DoAnNT106
 {
     public partial class Play : Form
     {
-        String ip = "127.0.0.1";
-        int port = 8081;
-        TcpClient tcpClient = new TcpClient();
-        StreamWriter sw;
-        StreamReader sr;
-        public Play(String roomId)
+        TcpClient tcpClient = Lobby.tcpClient;
+        StreamWriter sw = Lobby.sw;
+        StreamReader sr = Lobby.sr;
+        Double money = Lobby.money;
+        public Play(String roomId, String username)
         {
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
+            //Thread receive message from server
             try
             {
-                IPEndPoint iPEndPoint = new IPEndPoint(IPAddress.Parse(ip), port);
-                tcpClient.Connect(iPEndPoint);
-                sw = new StreamWriter(tcpClient.GetStream());
-                sr = new StreamReader(tcpClient.GetStream());
-                sw.AutoFlush = true;
-                Thread receiveThread = new Thread(new ThreadStart(receiveMessage));
-                receiveThread.Start();
+                new Thread(new ThreadStart(receiveMessage)).Start();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            //Set username and roomId
             label1.Text = "Phòng " + roomId;
+            label2.Text = username;
+            label4.Text = money.ToString();
+        }
+
+        //Send message to server
+        private void sendMessage(String message)
+        {
+            try
+            {
+                sw.WriteLine(message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnSendMessage_Click(object sender, EventArgs e)
         {
             String message = richTextBox2.Text;
             //Send message
-            sw.WriteLine(label1.Text + ": " + message);
+            sendMessage(label1.Text + "(chat):" + label2.Text + ":" + message);
         }
 
+        //Receive message from server
         private void receiveMessage()
         {
             try
@@ -56,9 +68,56 @@ namespace DoAnNT106
                 while (tcpClient.Connected)
                 {
                     String message = sr.ReadLine();
-                    if (message != null && (message.Contains(label1.Text) || message.Contains("Result")))
+                    //Receive message from chat
+                    if (message != null && message.Contains("chat"))
                     {
-                        richTextBox1.AppendText(message + "\r\n");
+                        String finalMessage = message.Substring(message.IndexOf(":")+1);
+                        richTextBox1.AppendText(finalMessage + "\r\n");
+                    }
+                    //Receive result and display the result
+                    if (message != null && message.ToLower().Contains("result"))
+                    {
+                        String finalResult = message.Substring(message.IndexOf(":")+1);
+                        label3.Text = finalResult;
+                        //If result is draw display result
+                        if (finalResult != null && finalResult.Equals("Draw"))
+                        {
+                            ListViewItem viewItem = new ListViewItem("Draw");
+                            listView1.Items.Add(viewItem);
+                        }
+                        else
+                        {
+                            String[] history = finalResult.Split(' ');
+                            //Display result to history
+                            if (history[1].ToLower().Equals("win"))
+                            {
+                                //If username is equal player win save it, else save lose
+                                if (label2.Text.Equals(history[0]))
+                                {
+                                    ListViewItem viewItem = new ListViewItem("Win");
+                                    listView1.Items.Add(viewItem);
+                                }
+                                else
+                                {
+                                    ListViewItem viewItem = new ListViewItem("Lose");
+                                    listView1.Items.Add(viewItem);
+                                }
+                            }
+                            if (history[1].ToLower().Equals("lose"))
+                            {
+                                //If username is equal player win save it, else save lose
+                                if (label2.Text.Equals(history[0]))
+                                {
+                                    ListViewItem viewItem = new ListViewItem("Lose");
+                                    listView1.Items.Add(viewItem);
+                                }
+                                else
+                                {
+                                    ListViewItem viewItem = new ListViewItem("Win");
+                                    listView1.Items.Add(viewItem);
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -75,12 +134,22 @@ namespace DoAnNT106
 
         private void button2_Click(object sender, EventArgs e)
         {
-            sw.WriteLine(label1.Text + " choose : 1");
+            sendMessage(label1.Text + "(play):" + label2.Text + " choose kéo");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            sw.WriteLine(label1.Text + " choose : 2");
+            sendMessage(label1.Text + "(play):" + label2.Text + " choose búa");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            sendMessage(label1.Text + "(play):" + label2.Text + " choose bao");
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

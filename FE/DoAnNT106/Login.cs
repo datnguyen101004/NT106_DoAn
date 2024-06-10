@@ -48,12 +48,14 @@ namespace DoAnNT106
                     String message = await httpResponseMessage.Content.ReadAsStringAsync();
                     if (!message.Contains("error"))
                     {
+                        this.Hide();
                         MessageBox.Show(message);
                         Lobby lobby = new Lobby(message);
                         lobby.ShowDialog();
                     }
                     else
                     {
+                        this.Hide();
                         MessageBox.Show(message);
                         Lobby lobby = new Lobby(user.email);
                         lobby.ShowDialog();
