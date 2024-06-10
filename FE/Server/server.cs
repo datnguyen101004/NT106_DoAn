@@ -26,28 +26,28 @@ namespace Server
         //Handle the choosen of 2 people
         private String handleResult(String choose1, String choose2)
         {
-            if (choose1 == null || choose2 == null)
+            if (choose1 != null && choose2 != null)
             {
                 if (choose1.ToLower().Equals("kéo"))
                 {
-                    if (choose2.ToLower().Equals("kéo")) return "Hòa";
-                    if (choose2.ToLower().Equals("búa")) return "Player1 Thua";
-                    if (choose2.ToLower().Equals("bao")) return "Player1 Thắng";
+                    if (choose2.ToLower().Equals("kéo")) return "Result:Draw";
+                    if (choose2.ToLower().Equals("búa")) return "Result:Player1 win";
+                    if (choose2.ToLower().Equals("bao")) return "Result:Player2 win";
                 }
                 if (choose1.ToLower().Equals("búa"))
                 {
-                    if (choose2.ToLower().Equals("kéo")) return "Player1 Thắng";
-                    if (choose2.ToLower().Equals("búa")) return "Player1 Hòa";
-                    if (choose2.ToLower().Equals("bao")) return "Player1 Thua";
+                    if (choose2.ToLower().Equals("kéo")) return "Result:Player1 win";
+                    if (choose2.ToLower().Equals("búa")) return "Result:Draw";
+                    if (choose2.ToLower().Equals("bao")) return "Result:Player2 win";
                 }
                 if (choose1.ToLower().Equals("bao"))
                 {
-                    if (choose2.ToLower().Equals("kéo")) return "Player1 Thua";
-                    if (choose2.ToLower().Equals("búa")) return "Player1 Thắng";
-                    if (choose2.ToLower().Equals("bao")) return "Player1 Hòa";
+                    if (choose2.ToLower().Equals("kéo")) return "Result:Player2 win";
+                    if (choose2.ToLower().Equals("búa")) return "Result:Player1 win";
+                    if (choose2.ToLower().Equals("bao")) return "Result:Draw";
                 }
             }
-            return null;
+            return "";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -92,38 +92,28 @@ namespace Server
                 writer.AutoFlush = true;
                 while (true)
                 {
-                    string message = reader.ReadLine();
+                    string message = reader.ReadToEnd();
                     if (message != null)
                     {
                         BroadcastMessage(message);
                         richTextBox1.AppendText(message + "\r\n");
-                        if (message.Contains("choose"))
+                        if (message.Contains("play"))
                         {
                             messages.Add(message);
                             if (messages.Count == 2)
                             {
-                                int choose1 = int.Parse(messages[0].Substring(messages[0].Length - 1));
-                                int choose2 = int.Parse(messages[1].Substring(messages[1].Length - 1));
-                                if (choose1 > choose2)
-                                {
-                                    BroadcastMessage("Result: Player1 win");
-                                    richTextBox1.AppendText("Result: Player1 win");
-                                }
-                                else if (choose2 > choose1)
-                                {
-                                    BroadcastMessage("Result: Player2 win");
-                                    richTextBox1.AppendText("Result: Player2 win");
-                                }
-                                else
-                                {
-                                    BroadcastMessage("Result: Equal");
-                                    richTextBox1.AppendText("Result: Equal");
-                                }
+                                String choose1 = messages[0].Substring(messages[0].LastIndexOf(" ")+1);
+                                Console.WriteLine(choose1);
+                                String choose2 = messages[1].Substring(messages[1].LastIndexOf(" ")+1);
+                                Console.WriteLine(choose2);
+                                String result = handleResult(choose1, choose2);
+                                Console.WriteLine(result);
+                                richTextBox1.AppendText(result);
+                                BroadcastMessage(result);
                                 messages.Clear();
                             }
                         }
                     }
-                    Console.WriteLine(messages.Count);
                 }
             }
             catch (Exception ex)

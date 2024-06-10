@@ -13,5 +13,6 @@ namespace DoAnNT106
         public String email { get; set; }
         public String password { get; set; }
         public String recipient { get; set; }
+        public Double money { get; set; }
     }
 }
