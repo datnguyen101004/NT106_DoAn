@@ -217,5 +217,8 @@
   <ItemGroup>
     <None Include="Resources\cardkeo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logingmail.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
