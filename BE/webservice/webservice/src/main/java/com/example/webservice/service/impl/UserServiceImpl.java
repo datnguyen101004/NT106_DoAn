@@ -4,6 +4,7 @@ import com.example.webservice.dto.CreateRoomDto;
 import com.example.webservice.dto.UserChangePassword;
 import com.example.webservice.dto.JoinRoomDto;
 
+import com.example.webservice.dto.UserDto;
 import com.example.webservice.entity.Room;
 import com.example.webservice.entity.User;
 import com.example.webservice.repository.RoomRepository;
@@ -92,6 +93,33 @@ public class UserServiceImpl implements UserService {
     public double getMoney(String username) {
         User user = userRepository.findByUsername(username).orElse(null);
         return user.getMoney();
+    }
+
+    @Override
+    public String outRoom(JoinRoomDto joinRoomDto) {
+        try {
+            String username = joinRoomDto.getUsername();
+            String roomID = joinRoomDto.getRoomId();
+            Room room = roomRepository.findByRoomId(roomID);
+            room.getUserList().remove(username);
+            return "success";
+        }
+        catch (Exception e){
+            return "Error";
+        }
+    }
+
+    @Override
+    public UserDto getUser(String username) {
+        User user = userRepository.findByUsername(username).orElse(null);
+        UserDto userDto = new UserDto();
+        assert user != null;
+        userDto.setUsername(user.getUsername());
+        userDto.setMoney(user.getMoney());
+        userDto.setEmail(user.getEmail());
+        userDto.setMatchWin(user.getMatchWin());
+        userDto.setMatchLose(user.getMatchLose());
+        return userDto;
     }
 
     @Override

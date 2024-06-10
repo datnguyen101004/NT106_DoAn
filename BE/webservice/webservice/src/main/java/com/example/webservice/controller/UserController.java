@@ -1,9 +1,6 @@
 package com.example.webservice.controller;
 
-import com.example.webservice.dto.CreateRoomDto;
-import com.example.webservice.dto.RoomDto;
-import com.example.webservice.dto.UserChangePassword;
-import com.example.webservice.dto.JoinRoomDto;
+import com.example.webservice.dto.*;
 import com.example.webservice.entity.User;
 import com.example.webservice.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -34,6 +31,11 @@ public class UserController {
         return ResponseEntity.ok().body(userService.joinRoom(joinRoomDto));
     }
 
+    @PostMapping("/outRoom")
+    public ResponseEntity<String> outRoom(@RequestBody JoinRoomDto joinRoomDto) throws Exception {
+        return ResponseEntity.ok().body(userService.outRoom(joinRoomDto));
+    }
+
     @GetMapping("/allRoom")
     public ResponseEntity<List<CreateRoomDto>> getAllRoom(){
         return ResponseEntity.ok().body(userService.getAllRoom());
@@ -52,5 +54,10 @@ public class UserController {
     @GetMapping("/info")
     public ResponseEntity<Double> getMoney(@RequestParam("username") String username){
         return ResponseEntity.ok(userService.getMoney(username));
+    }
+
+    @GetMapping("")
+    public ResponseEntity<UserDto> getUser(@RequestParam("username") String username){
+        return ResponseEntity.ok(userService.getUser(username));
     }
 }

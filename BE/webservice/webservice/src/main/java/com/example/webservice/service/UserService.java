@@ -3,6 +3,7 @@ package com.example.webservice.service;
 import com.example.webservice.dto.CreateRoomDto;
 import com.example.webservice.dto.UserChangePassword;
 import com.example.webservice.dto.JoinRoomDto;
+import com.example.webservice.dto.UserDto;
 import com.example.webservice.entity.User;
 
 import java.util.List;
@@ -21,4 +22,8 @@ public interface UserService {
     String lose(String username, int type) throws Exception;
 
     double getMoney(String username);
+
+    String outRoom(JoinRoomDto joinRoomDto);
+
+    UserDto getUser(String username);
 }
