@@ -177,5 +177,11 @@ namespace DoAnNT106
         {
 
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Rule frmrule = new Rule();
+            frmrule.ShowDialog();
+        }
     }
 }
