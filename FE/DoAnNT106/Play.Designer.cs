@@ -200,8 +200,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::DoAnNT106.Properties.Resources.card;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.BackgroundImage = global::DoAnNT106.Properties.Resources.cardbao;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(513, 370);
@@ -214,9 +212,7 @@
             // 
             this.pictureBox2.BackgroundImage = global::DoAnNT106.Properties.Resources.card;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(513, 50);
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(513, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(513, 47);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(175, 250);
             this.pictureBox2.TabIndex = 11;
@@ -278,7 +274,7 @@
             // 
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(460, 309);
+            this.button5.Location = new System.Drawing.Point(460, 303);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(125, 55);
             this.button5.TabIndex = 17;

@@ -20,12 +20,12 @@ namespace DoAnNT106
 {
     public partial class Play : Form
     {
-        TcpClient tcpClient = Lobby.tcpClient;
-        StreamWriter sw = Lobby.sw;
-        StreamReader sr = Lobby.sr;
+        private TcpClient tcpClient;
+        private StreamWriter sw;
+        private StreamReader sr;
         String roomID;
         String userName;
-        public Play(String roomId, String username)
+        public Play(String roomId, String username, TcpClient client, StreamWriter streamWriter, StreamReader streamReader)
         {
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
@@ -33,6 +33,19 @@ namespace DoAnNT106
             label1.Text = "Phòng " + roomId;
             roomID = roomId;
             userName = username;
+            tcpClient = client;
+            sw = streamWriter;
+            sr = streamReader;
+            //Thread receive message from server
+            try
+            {
+                Thread thread = new Thread(new ThreadStart(receiveMessage));
+                thread.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         //Send message to server
@@ -132,10 +145,11 @@ namespace DoAnNT106
                         waitTime(5);
                         label5.Visible = false;
                     }
-                    Console.WriteLine(message);
                     if (message != null && message.ToLower().Contains("start"))
                     {
-                        Console.WriteLine("Received start game notification");
+                        pictureBox1.Visible = true;
+                        pictureBox2.Visible = true;
+                        button5.Visible = false;
                     }
                 }
             }
@@ -222,16 +236,6 @@ namespace DoAnNT106
         private void Play_Load(object sender, EventArgs e)
         {
             updatePlayRoom();
-            //Thread receive message from server
-            try
-            {
-                Thread thread = new Thread(new ThreadStart(receiveMessage));
-                thread.Start();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
 
         private async void updatePlayRoom()

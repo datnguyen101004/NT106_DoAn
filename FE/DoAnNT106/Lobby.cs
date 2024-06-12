@@ -26,8 +26,8 @@ namespace DoAnNT106
         String ip = "127.0.0.1";
         int port = 8081;
         public static TcpClient tcpClient = new TcpClient();
-        public static StreamReader sr;
-        public static StreamWriter sw;
+        private StreamReader sr;
+        private StreamWriter sw;
 
         public Lobby(String username)
         {
@@ -42,6 +42,9 @@ namespace DoAnNT106
                 sw = new StreamWriter(tcpClient.GetStream());
                 sw.AutoFlush = true;
                 sendMessage(username + " connected");
+                Thread received = new Thread(new ThreadStart(receivedMessage));
+                received.IsBackground = true;
+                received.Start();
             }
             catch (Exception ex)
             {
@@ -49,12 +52,22 @@ namespace DoAnNT106
             }
         }
 
+        public StreamReader GetStreamReader()
+        {
+            return sr;
+        }
+
+        public StreamWriter GetStreamWriter()
+        {
+            return sw;
+        }
+
         //Update listroom when notification from server
         private void receivedMessage()
         {
             try
             {
-                while (true)
+                while (tcpClient.Connected)
                 {
                     String notification = sr.ReadLine();
                     Console.WriteLine(notification);
@@ -106,7 +119,9 @@ namespace DoAnNT106
             //Send notification to server
             sendMessage(label2.Text + " join room with id: " + joinRoomDto.roomId);
             //Go to play screen
-            Play pl = new Play(listView1.SelectedItems[0].Text, label2.Text);
+            sr.Close();
+            sw.Close();
+            Play pl = new Play(listView1.SelectedItems[0].Text, label2.Text, tcpClient, sw, sr);
             pl.Hide();
             pl.ShowDialog();
             this.Show();
@@ -183,7 +198,7 @@ namespace DoAnNT106
                 sendMessage(label2.Text + " create new room with id: " + newRoom.roomId);
                 //Go to play screen
                 this.Hide();
-                Play pl = new Play(newRoom.roomId, label2.Text);
+                Play pl = new Play(newRoom.roomId, label2.Text, tcpClient, sw, sr);
                 pl.Hide();
                 pl.ShowDialog();
                 this.Show();
@@ -204,9 +219,6 @@ namespace DoAnNT106
         {
             button1.Enabled = false;
             updateRoom();
-            Thread received = new Thread(new ThreadStart(receivedMessage));
-            received.IsBackground = true;
-            received.Start();
         }
 
         public async void updateRoom()
