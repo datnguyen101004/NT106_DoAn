@@ -1,9 +1,6 @@
 package com.example.webservice.service;
 
-import com.example.webservice.dto.CreateRoomDto;
-import com.example.webservice.dto.UserChangePassword;
-import com.example.webservice.dto.JoinRoomDto;
-import com.example.webservice.dto.UserDto;
+import com.example.webservice.dto.*;
 import com.example.webservice.entity.User;
 
 import java.util.List;
@@ -13,7 +10,7 @@ public interface UserService {
 
     String createRoom(CreateRoomDto createRoomDto) throws Exception;
 
-    String joinRoom(JoinRoomDto joinRoomDto) throws Exception;
+    UserDto joinRoom(JoinRoomDto joinRoomDto) throws Exception;
 
     List<CreateRoomDto> getAllRoom();
 
@@ -26,4 +23,6 @@ public interface UserService {
     String outRoom(JoinRoomDto joinRoomDto);
 
     UserDto getUser(String username);
+
+    UserInfoRoomDto getInfoUserInRoom(String roomId);
 }

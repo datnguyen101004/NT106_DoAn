@@ -1,10 +1,7 @@
 package com.example.webservice.service.impl;
 
-import com.example.webservice.dto.CreateRoomDto;
-import com.example.webservice.dto.UserChangePassword;
-import com.example.webservice.dto.JoinRoomDto;
+import com.example.webservice.dto.*;
 
-import com.example.webservice.dto.UserDto;
 import com.example.webservice.entity.Room;
 import com.example.webservice.entity.User;
 import com.example.webservice.repository.RoomRepository;
@@ -55,12 +52,15 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String joinRoom(JoinRoomDto joinRoomDto) throws Exception {
+    public UserDto joinRoom(JoinRoomDto joinRoomDto) throws Exception {
         User user = userRepository.findByUsername(joinRoomDto.getUsername()).orElseThrow(() -> new Exception("Cannot find username"));
         Room room = roomRepository.findByRoomId(joinRoomDto.getRoomId());
         room.getUserList().add(user);
         roomRepository.save(room);
-        return joinRoomDto.getUsername() + "join room successfully";
+        UserDto userDto = new UserDto();
+        userDto.setMoney(user.getMoney());
+        userDto.setUsername(user.getUsername());
+        return userDto;
     }
 
     @Override
@@ -120,6 +120,27 @@ public class UserServiceImpl implements UserService {
         userDto.setMatchWin(user.getMatchWin());
         userDto.setMatchLose(user.getMatchLose());
         return userDto;
+    }
+
+    @Override
+    public UserInfoRoomDto getInfoUserInRoom(String roomId) {
+        Room room = roomRepository.findByRoomId(roomId);
+        List<User> userList = room.getUserList();
+        UserInfoRoomDto userInfoRoomDto = new UserInfoRoomDto();
+        if (userList.size() == 1){
+            User user = userList.get(0);
+            userInfoRoomDto.setUsername1(user.getUsername());
+            userInfoRoomDto.setMoney1(user.getMoney());
+        }
+        else if (userList.size() == 2){
+            User user1 = userList.get(0);
+            User user2 = userList.get(1);
+            userInfoRoomDto.setUsername1(user1.getUsername());
+            userInfoRoomDto.setMoney1(user1.getMoney());
+            userInfoRoomDto.setUsername2(user2.getUsername());
+            userInfoRoomDto.setMoney2(user2.getMoney());
+        }
+        return userInfoRoomDto;
     }
 
     @Override

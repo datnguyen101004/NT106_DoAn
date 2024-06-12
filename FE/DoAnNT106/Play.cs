@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -22,24 +23,16 @@ namespace DoAnNT106
         TcpClient tcpClient = Lobby.tcpClient;
         StreamWriter sw = Lobby.sw;
         StreamReader sr = Lobby.sr;
-        Double money = Lobby.money;
+        String roomID;
+        String userName;
         public Play(String roomId, String username)
         {
             InitializeComponent();
             CheckForIllegalCrossThreadCalls = false;
-            //Thread receive message from server
-            try
-            {
-                new Thread(new ThreadStart(receiveMessage)).Start();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
             //Set username and roomId
             label1.Text = "Phòng " + roomId;
-            label2.Text = username;
-            label4.Text = money.ToString();
+            roomID = roomId;
+            userName = username;
         }
 
         //Send message to server
@@ -79,6 +72,7 @@ namespace DoAnNT106
                     //Receive result and display the result
                     if (message != null && message.ToLower().Contains("result"))
                     {
+                        label3.Visible = true;
                         String finalResult = message.Substring(message.IndexOf(":")+1);
                         label3.Text = finalResult;
                         //If result is draw display result
@@ -121,12 +115,59 @@ namespace DoAnNT106
                             }
                         }
                     }
+                    //Notification when new user join room
+                    if (message != null && message.ToLower().Contains("join"))
+                    {
+                        Console.WriteLine(message + "rec in playroom");
+                        label5.Visible = true;
+                        String noti = message.Substring(0, message.IndexOf("with")-1);
+                        String username = message.Substring(0, message.IndexOf(" "));
+                        getMoney(username);
+                        label5.Text = noti;
+                        label6.Visible = true;
+                        label7.Visible = true;
+                        label6.Text = username;
+                        label7.Text = competitorMoney.ToString();
+                        button5.Enabled = true;
+                        waitTime(5);
+                        label5.Visible = false;
+                    }
+                    Console.WriteLine(message);
+                    if (message != null && message.ToLower().Contains("start"))
+                    {
+                        Console.WriteLine("Received start game notification");
+                    }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void updateStartRoom()
+        {
+            pictureBox1.Visible = true;
+            pictureBox2.Visible = true;
+            button5.Visible = false;
+        }
+
+        private Double competitorMoney;
+
+        //Get money
+        private async void getMoney(string username)
+        {
+            String requestParam = "/user/money?username=" + username;
+            HttpResponseMessage httpResponseMessage = await httpClient.GetAsync(requestParam);
+            String money = await httpResponseMessage.Content.ReadAsStringAsync();
+            competitorMoney = Double.Parse(money);
+        }
+
+
+        //Set time waiting
+        private void waitTime(int second)
+        {
+            Thread.Sleep(second*1000);
         }
 
         private static HttpClient httpClient = new HttpClient()
@@ -176,6 +217,86 @@ namespace DoAnNT106
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Play_Load(object sender, EventArgs e)
+        {
+            updatePlayRoom();
+            //Thread receive message from server
+            try
+            {
+                Thread thread = new Thread(new ThreadStart(receiveMessage));
+                thread.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private async void updatePlayRoom()
+        {
+            //Get info user in room
+            String requestParam = "/user/room/info?roomId=" + roomID;
+            HttpResponseMessage httpResponseMessage = await httpClient.GetAsync(requestParam);
+            String data = await httpResponseMessage.Content.ReadAsStringAsync();
+            InfoUserRoom userInfo = JsonConvert.DeserializeObject<InfoUserRoom>(data);
+            if (userInfo != null)
+            {
+                //if you are host (room has 1 people)
+                if (String.IsNullOrEmpty(userInfo.username2))
+                {
+                    label2.Text = userInfo.username1;
+                    label4.Text = userInfo.money1.ToString();
+                    label3.Visible = false;
+                    label5.Visible = false;
+                    label6.Visible = false;
+                    label7.Visible = false;
+                    pictureBox1.Visible = false;
+                    pictureBox2.Visible = false;
+                    button5.Enabled = false;
+                }
+                //room has 2 people
+                else
+                {
+                    if (userName.Equals(userInfo.username1))
+                    {
+                        label2.Text = userInfo.username1;
+                        label4.Text = userInfo.money1.ToString();
+                        label6.Text = userInfo.username2;
+                        label7.Text = userInfo.money2.ToString();
+                    }
+                    else
+                    {
+                        label2.Text = userInfo.username2;
+                        label4.Text = userInfo.money2.ToString();
+                        label6.Text = userInfo.username1;
+                        label7.Text = userInfo.money1.ToString();
+                    }
+                    pictureBox1.Visible = false;
+                    pictureBox2.Visible = false;
+                    label3.Visible = false;
+                    label5.Visible = false;
+                }
+            }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Visible = true; 
+            pictureBox2.Visible = true;
+            button5.Visible = false;
+            sendMessage(label1.Text + ":start new game");
         }
     }
 }

@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Text;
@@ -21,7 +22,6 @@ namespace DoAnNT106
 {
     public partial class Lobby : Form
     {
-        public static Double money;
         bool sidebarExpand;
         String ip = "127.0.0.1";
         int port = 8081;
@@ -42,23 +42,6 @@ namespace DoAnNT106
                 sw = new StreamWriter(tcpClient.GetStream());
                 sw.AutoFlush = true;
                 sendMessage(username + " connected");
-                getMoney();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        //Get money of user
-        private async void getMoney()
-        {
-            try
-            {
-                String queryParam = "/user/info?username=" + label2.Text;
-                HttpResponseMessage httpResponseMessage = await httpClient.GetAsync(queryParam);
-                var moneyStr = await httpResponseMessage.Content.ReadAsStringAsync();
-                money = Double.Parse(moneyStr);
             }
             catch (Exception ex)
             {
@@ -75,7 +58,7 @@ namespace DoAnNT106
                 {
                     String notification = sr.ReadLine();
                     Console.WriteLine(notification);
-                    if (notification != null  && (notification.ToLower().Contains("join") || notification.ToLower().Contains("out")))
+                    if (notification != null  && (notification.ToLower().Contains("join") || notification.ToLower().Contains("out") || notification.ToLower().Contains("create")))
                     {
                         if (this.InvokeRequired)
                         {

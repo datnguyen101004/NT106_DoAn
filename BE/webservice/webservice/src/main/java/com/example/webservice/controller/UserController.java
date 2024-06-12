@@ -27,7 +27,7 @@ public class UserController {
     }
 
     @PostMapping("/joinRoom")
-    public ResponseEntity<String> joinRoom(@RequestBody JoinRoomDto joinRoomDto) throws Exception {
+    public ResponseEntity<UserDto> joinRoom(@RequestBody JoinRoomDto joinRoomDto) throws Exception {
         return ResponseEntity.ok().body(userService.joinRoom(joinRoomDto));
     }
 
@@ -51,7 +51,7 @@ public class UserController {
         return ResponseEntity.ok(userService.lose(username, roomDto.getType()));
     }
 
-    @GetMapping("/info")
+    @GetMapping("/money")
     public ResponseEntity<Double> getMoney(@RequestParam("username") String username){
         return ResponseEntity.ok(userService.getMoney(username));
     }
@@ -59,5 +59,10 @@ public class UserController {
     @GetMapping("")
     public ResponseEntity<UserDto> getUser(@RequestParam("username") String username){
         return ResponseEntity.ok(userService.getUser(username));
+    }
+
+    @GetMapping("/room/info")
+    public ResponseEntity<UserInfoRoomDto> getInfo(@RequestParam("roomId") String roomId){
+        return ResponseEntity.ok(userService.getInfoUserInRoom(roomId));
     }
 }
