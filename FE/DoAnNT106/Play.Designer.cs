@@ -104,12 +104,12 @@
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Image = global::DoAnNT106.Properties.Resources.Scissors;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(12, 597);
+            this.button2.Location = new System.Drawing.Point(12, 598);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 63);
+            this.button2.Size = new System.Drawing.Size(137, 63);
             this.button2.TabIndex = 4;
             this.button2.Text = "Kéo";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -121,12 +121,12 @@
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Image = global::DoAnNT106.Properties.Resources.Remove_bg_ai_1717344063568;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(149, 597);
+            this.button3.Location = new System.Drawing.Point(155, 598);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(118, 63);
+            this.button3.Size = new System.Drawing.Size(137, 63);
             this.button3.TabIndex = 5;
             this.button3.Text = "Búa";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -138,12 +138,12 @@
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Font = new System.Drawing.Font("Segoe UI Variable Display", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Image = global::DoAnNT106.Properties.Resources.bao;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(286, 598);
+            this.button4.Location = new System.Drawing.Point(298, 598);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(118, 63);
+            this.button4.Size = new System.Drawing.Size(137, 63);
             this.button4.TabIndex = 6;
             this.button4.Text = "Bao";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -202,6 +202,8 @@
             // 
             this.pictureBox1.BackgroundImage = global::DoAnNT106.Properties.Resources.card;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.BackgroundImage = global::DoAnNT106.Properties.Resources.cardbao;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(513, 370);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(175, 250);
@@ -213,6 +215,8 @@
             this.pictureBox2.BackgroundImage = global::DoAnNT106.Properties.Resources.card;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(513, 50);
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(513, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(175, 250);
             this.pictureBox2.TabIndex = 11;
