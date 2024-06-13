@@ -236,5 +236,8 @@
   <ItemGroup>
     <None Include="Resources\ruleedit.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\show.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

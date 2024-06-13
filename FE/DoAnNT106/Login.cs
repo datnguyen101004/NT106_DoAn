@@ -48,17 +48,14 @@ namespace DoAnNT106
                     String message = await httpResponseMessage.Content.ReadAsStringAsync();
                     if (!message.Contains("error"))
                     {
+                        MessageBox.Show("Success");
                         this.Hide();
-                        MessageBox.Show(message);
                         Lobby lobby = new Lobby(message);
                         lobby.ShowDialog();
                     }
                     else
                     {
-                        this.Hide();
-                        MessageBox.Show(message);
-                        Lobby lobby = new Lobby(user.email);
-                        lobby.ShowDialog();
+                        MessageBox.Show("Incorrect username or password");
                     }
                 }
                 else
@@ -86,26 +83,53 @@ namespace DoAnNT106
 
         private async void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            String email = textBox1.Text;
-            if (String.IsNullOrEmpty(email))
+            try
             {
-                MessageBox.Show("Please enter your email");
+                if (String.IsNullOrEmpty(textBox1.Text))
+                {
+                    throw new Exception("Enter your email to recover your password");
+                }
+                String email = textBox1.Text;
+                if (String.IsNullOrEmpty(email))
+                {
+                    MessageBox.Show("Please enter your email");
+                }
+                User user = new User();
+                user.recipient = email;
+                String body = JsonConvert.SerializeObject(user);
+                HttpContent httpContent = new StringContent(body, Encoding.UTF8, "application/json");
+                HttpResponseMessage httpResponse = await httpClient.PostAsync("/auth/sendForgetMail", httpContent);
+                var data = await httpResponse.Content.ReadAsStringAsync();
+                if (data.ToString().Contains("fail"))
+                {
+                    throw new Exception(data.ToString());
+                }
+                else
+                {
+                    MessageBox.Show("Please check your mail to restore the password");
+                }
             }
-            User user = new User();
-            user.recipient = email;
-            String body = JsonConvert.SerializeObject(user);
-            HttpContent httpContent = new StringContent(body, Encoding.UTF8, "application/json");
-            HttpResponseMessage httpResponse = await httpClient.PostAsync("/auth/sendForgetMail", httpContent);
-            if (httpResponse.IsSuccessStatusCode)
+            catch (Exception ex)
             {
-                String message = await httpResponse.Content.ReadAsStringAsync();
-                MessageBox.Show(message);
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (textBox2.UseSystemPasswordChar == true)
+            {
+                textBox2.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                textBox2.UseSystemPasswordChar = true;
+            }
         }
     }
 }
