@@ -559,5 +559,11 @@ namespace DoAnNT106
             button5.Visible = false;
             timer.Start();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Rule frmrule = new Rule();
+            frmrule.ShowDialog();
+        }
     }
 }
