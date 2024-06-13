@@ -19,7 +19,8 @@ namespace DoAnNT106
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            EditInfo frm = new EditInfo();
+            frm.ShowDialog();
         }
     }
 }
