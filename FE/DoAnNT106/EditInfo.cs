@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace DoAnNT106
 {
-    public partial class Info : Form
+    public partial class EditInfo : Form
     {
-        public Info()
+        public EditInfo()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            EditInfo frmedit = new EditInfo();  
-            frmedit.ShowDialog();
         }
     }
 }
