@@ -33,7 +33,7 @@ namespace DoAnNT106
         {
             try
             {
-                if (label1.Visible == true || label2.Visible == true)
+                if (label1.Visible == true || label2.Visible == true || label3.Visible == true)
                 {
                     MessageBox.Show("Nhập lại đúng định dạng");
                 }
@@ -100,6 +100,15 @@ namespace DoAnNT106
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(textBox2.Text))
+            {
+                label1.Text = "Username không được để trống";
+                label1.Visible = true;
+            }
+            else
+            {
+                label1.Visible = false;
+            }
             if (!textBox2.Text.Contains("@gmail.com"))
             {
                 label1.Text = "Email phải có dạng @gmail.com";
@@ -113,6 +122,15 @@ namespace DoAnNT106
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(textBox3.Text))
+            {
+                label2.Text = "Username không được để trống";
+                label2.Visible = true;
+            }
+            else
+            {
+                label2.Visible = false;
+            }
             if (textBox3.Text.Length < 8)
             {
                 label2.Text = "Mật khẩu phải dài ít nhất 8 kí tự";
@@ -121,6 +139,19 @@ namespace DoAnNT106
             else 
             { 
                 label2.Visible = false; 
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(textBox1.Text))
+            {
+                label3.Text = "Username không được để trống";
+                label3.Visible = true;
+            }
+            else
+            {
+                label3.Visible = false;
             }
         }
     }

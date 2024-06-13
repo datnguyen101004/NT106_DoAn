@@ -29,11 +29,13 @@ namespace DoAnNT106
         public static StreamReader sr;
         public static StreamWriter sw;
         private Boolean enableListenLobby = true;
+        private String usernameTran;
 
         public Lobby(String username)
         {
             InitializeComponent();
-            label2.Text = username;
+            usernameTran = username;
+            label2.Text = "Username: " + username;
             //Init a connection to server
             try
             {
@@ -83,6 +85,17 @@ namespace DoAnNT106
                             updateRoom();
                         }
                     }
+                    if (notification != null && notification.ToLower().Contains("update"))
+                    {
+                        if (this.InvokeRequired)
+                        {
+                            usernameTran = notification.Substring(notification.IndexOf(":") + 1);
+                            this.Invoke(new Action(() =>
+                            {
+                                label2.Text = "Username:" + usernameTran;
+                            }));
+                        }
+                    }
                 }
             }
             catch (Exception ex) 
@@ -109,7 +122,7 @@ namespace DoAnNT106
             //Enter to a exist room
             var joinRoomDto = new
             {
-                username = label2.Text,
+                username = usernameTran,
                 roomId = listView1.SelectedItems[0].Text,
             };
             //Fetch api
@@ -117,11 +130,11 @@ namespace DoAnNT106
             HttpContent httpContent = new StringContent(joinRoomDtoJson, Encoding.UTF8, "application/json");
             HttpResponseMessage httpResponseMessage = await httpClient.PostAsync("/user/joinRoom", httpContent);
             //Send notification to server
-            sendMessage(label2.Text + " join room with id: " + joinRoomDto.roomId);
+            sendMessage(usernameTran + " join room with id: " + joinRoomDto.roomId);
             //Go to play screen
             this.Hide();
             enableListenLobby = false;
-            Play pl = new Play(listView1.SelectedItems[0].Text, label2.Text);
+            Play pl = new Play(listView1.SelectedItems[0].Text, usernameTran);
             pl.Hide();
             pl.ShowDialog();
             this.Show();
@@ -167,7 +180,7 @@ namespace DoAnNT106
 
         private void bt_info_Click(object sender, EventArgs e)
         {
-            Info frmInfo = new Info();
+            Info frmInfo = new Info(usernameTran, tcpClient, sw);
             frmInfo.Hide();
             frmInfo.ShowDialog();
         }
@@ -179,7 +192,7 @@ namespace DoAnNT106
                 //Create room with random id
                 Random random = new Random();
                 CreateRoom newRoom = new CreateRoom();
-                newRoom.username = label2.Text;
+                newRoom.username = usernameTran;
                 newRoom.roomId = random.Next(1000, 9999).ToString();
                 newRoom.typeMoney = 100;
                 newRoom.numberPeople = 1;
@@ -195,11 +208,11 @@ namespace DoAnNT106
                 item.SubItems.Add(newRoom.numberPeople.ToString());
                 listView1.Items.Add(item);
                 //Send notification to server
-                sendMessage(label2.Text + " create new room with id: " + newRoom.roomId);
+                sendMessage(usernameTran + " create new room with id: " + newRoom.roomId);
                 //Go to play screen
                 enableListenLobby = false;
                 this.Hide();
-                Play pl = new Play(newRoom.roomId, label2.Text);
+                Play pl = new Play(newRoom.roomId, usernameTran);
                 pl.Hide();
                 pl.ShowDialog();
                 this.Show();
@@ -267,6 +280,11 @@ namespace DoAnNT106
             {
                 MessageBox.Show(ex.Message);
             }
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -232,8 +232,8 @@ namespace DoAnNT106
                         else
                         {
                             String[] history = finalResult.Split(' ');
-                            Console.WriteLine(userName);
-                            Console.WriteLine(username2);
+                            Console.WriteLine("username1:" + userName);
+                            Console.WriteLine("username2:" + username2);
                             //Display result to history
                             if (history[1].ToLower().Contains("win"))
                             {
@@ -243,14 +243,14 @@ namespace DoAnNT106
                                     ListViewItem viewItem = new ListViewItem("Win");
                                     listView1.Items.Add(viewItem);
                                     addMoney();
-                                    callApiAddMoney(userName, username2);
+                                    callApiAddMoney(userName);
                                 }
                                 else
                                 {
                                     ListViewItem viewItem = new ListViewItem("Lose");
                                     listView1.Items.Add(viewItem);
                                     subMoney();
-                                    callApiAddMoney(username2, userName);
+                                    callApiSubMoney(userName);
                                 }
                             }
                             if (history[1].ToLower().Equals("lose"))
@@ -261,14 +261,14 @@ namespace DoAnNT106
                                     ListViewItem viewItem = new ListViewItem("Lose");
                                     listView1.Items.Add(viewItem);
                                     subMoney();
-                                    callApiAddMoney(username2, userName);
+                                    callApiSubMoney(userName);
                                 }
                                 else
                                 {
                                     ListViewItem viewItem = new ListViewItem("Win");
                                     listView1.Items.Add(viewItem);
                                     addMoney();
-                                    callApiAddMoney(userName, username2);
+                                    callApiAddMoney(userName);
                                 }
                             }
                         }
@@ -310,12 +310,16 @@ namespace DoAnNT106
             }
         }
 
-        private async void callApiAddMoney(String username1, String username2)
+        private async void callApiAddMoney(String username)
         {
-            String param1 = "/user/addMoney?username=" + username1;
-            HttpResponseMessage httpResponseMessage = await httpClient.GetAsync(param1);
-            String param2 = "/user/subMoney?username=" + username2;
-            HttpResponseMessage httpResponseMessage2 = await httpClient.GetAsync(param2);
+            String param = "/user/addMoney?username=" + username;
+            HttpResponseMessage httpResponseMessage = await httpClient.GetAsync(param);
+        }
+
+        private async void callApiSubMoney(String username)
+        {
+            String param = "/user/subMoney?username=" + userName;
+            HttpResponseMessage httpResponseMessage = await httpClient.GetAsync(param);
         }
 
         //Add money if you win and sub money your competitor

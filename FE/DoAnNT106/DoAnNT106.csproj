@@ -102,6 +102,7 @@
       <DependentUpon>signup.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <Compile Include="UserInfo.cs" />
     <EmbeddedResource Include="EditInfo.resx">
       <DependentUpon>EditInfo.cs</DependentUpon>
     </EmbeddedResource>
