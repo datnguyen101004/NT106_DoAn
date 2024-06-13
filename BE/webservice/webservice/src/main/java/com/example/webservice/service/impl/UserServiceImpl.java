@@ -154,7 +154,9 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.findByUsername(username).orElse(null);
         assert user != null;
         double money = user.getMoney() + 500;
+        int matchWin = user.getMatchWin() + 1;
         user.setMoney(money);
+        user.setMatchWin(matchWin);
         userRepository.save(user);
         return "" +money;
     }
@@ -165,9 +167,34 @@ public class UserServiceImpl implements UserService {
         User user = userRepository.findByUsername(username).orElse(null);
         assert user != null;
         double money = user.getMoney() - 500;
+        int matchLose = user.getMatchLose() + 1;
         user.setMoney(money);
+        user.setMatchLose(matchLose);
         userRepository.save(user);
         return "" +money;
+    }
+
+    @Override
+    public UserDto getInfoUser(String username) {
+        User user = userRepository.findByUsername(username).orElse(null);
+        UserDto userDto = new UserDto();
+        assert user != null;
+        userDto.setUsername(user.getUsername());
+        userDto.setMoney(user.getMoney());
+        userDto.setEmail(user.getEmail());
+        userDto.setMatchWin(user.getMatchWin());
+        userDto.setMatchLose(user.getMatchLose());
+        return userDto;
+    }
+
+    @Override
+    public String editInfo(UserDto userDto, String username) {
+        User user = userRepository.findByUsername(username).orElse(null);
+        assert user != null;
+        user.setEmail(userDto.getEmail());
+        user.setUsername(userDto.getUsername());
+        userRepository.save(user);
+        return "success";
     }
 
     @Override

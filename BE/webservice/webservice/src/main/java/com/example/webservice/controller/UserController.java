@@ -75,4 +75,14 @@ public class UserController {
     public ResponseEntity<String> subMoney(@RequestParam("username") String username){
         return ResponseEntity.ok(userService.subMoney(username));
     }
+
+    @GetMapping("/info")
+    public ResponseEntity<UserDto> getInfoUser(@RequestParam("username") String username){
+        return ResponseEntity.ok(userService.getInfoUser(username));
+    }
+
+    @PutMapping("/edit")
+    public ResponseEntity<String> editUser(@RequestBody UserDto userDto, @RequestParam("username") String username){
+        return ResponseEntity.ok(userService.editInfo(userDto, username));
+    }
 }

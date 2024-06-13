@@ -29,4 +29,8 @@ public interface UserService {
     String addMoney(String username);
 
     String subMoney(String username);
+
+    UserDto getInfoUser(String username);
+
+    String editInfo(UserDto userDto, String username);
 }
