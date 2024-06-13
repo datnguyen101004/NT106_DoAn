@@ -459,7 +459,7 @@ namespace DoAnNT106
         {
 
         }
-
+		
         private void Play_Load(object sender, EventArgs e)
         {
             label8.Visible = false;
@@ -549,11 +549,11 @@ namespace DoAnNT106
             pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
             if (handleTimeCountDown == 15)
             {
-                pictureBox1.Visible=true; 
-                pictureBox2.Visible=true;
-                button2.Enabled=true;
+                pictureBox1.Visible = true;
+                pictureBox2.Visible = true;
+                button2.Enabled = true;
                 button3.Enabled = true;
-                button4.Enabled=true;
+                button4.Enabled = true;
             }
             label8.Visible = true;
             button5.Visible = false;

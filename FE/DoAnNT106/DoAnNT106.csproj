@@ -83,6 +83,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Room.cs" />
+    <Compile Include="Rule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rule.Designer.cs">
+      <DependentUpon>Rule.cs</DependentUpon>
+    </Compile>
     <Compile Include="signup.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rule.resx">
+      <DependentUpon>Rule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="signup.resx">
       <DependentUpon>signup.cs</DependentUpon>
@@ -220,6 +229,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logingmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rule.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ruleedit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
