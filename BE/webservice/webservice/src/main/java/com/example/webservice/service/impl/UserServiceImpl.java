@@ -7,6 +7,7 @@ import com.example.webservice.entity.User;
 import com.example.webservice.repository.RoomRepository;
 import com.example.webservice.repository.UserRepository;
 import com.example.webservice.service.UserService;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -99,9 +100,13 @@ public class UserServiceImpl implements UserService {
     public String outRoom(JoinRoomDto joinRoomDto) {
         try {
             String username = joinRoomDto.getUsername();
+            User user = userRepository.findByUsername(username).orElseThrow(() -> new Exception("Cannot find username"));
             String roomID = joinRoomDto.getRoomId();
             Room room = roomRepository.findByRoomId(roomID);
-            room.getUserList().remove(username);
+            List<User> userList = room.getUserList();
+            userList.remove(user);
+            room.setUserList(userList);
+            roomRepository.save(room);
             return "success";
         }
         catch (Exception e){
@@ -141,6 +146,28 @@ public class UserServiceImpl implements UserService {
             userInfoRoomDto.setMoney2(user2.getMoney());
         }
         return userInfoRoomDto;
+    }
+
+    @Override
+    @Transactional
+    public String addMoney(String username) {
+        User user = userRepository.findByUsername(username).orElse(null);
+        assert user != null;
+        double money = user.getMoney() + 500;
+        user.setMoney(money);
+        userRepository.save(user);
+        return "" +money;
+    }
+
+    @Override
+    @Transactional
+    public String subMoney(String username) {
+        User user = userRepository.findByUsername(username).orElse(null);
+        assert user != null;
+        double money = user.getMoney() - 500;
+        user.setMoney(money);
+        userRepository.save(user);
+        return "" +money;
     }
 
     @Override

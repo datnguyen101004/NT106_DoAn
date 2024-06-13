@@ -24,26 +24,26 @@ namespace Server
         }
 
         //Handle the choosen of 2 people
-        private String handleResult(String choose1, String choose2)
+        private String handleResult(String choose1, String choose2, String username1, String username2)
         {
             if (choose1 != null && choose2 != null)
             {
                 if (choose1.ToLower().Equals("kéo"))
                 {
                     if (choose2.ToLower().Equals("kéo")) return "Result:Draw";
-                    if (choose2.ToLower().Equals("búa")) return "Result:Player1 win";
-                    if (choose2.ToLower().Equals("bao")) return "Result:Player2 win";
+                    if (choose2.ToLower().Equals("búa")) return "Result:" + username2 + " win";
+                    if (choose2.ToLower().Equals("bao")) return "Result:" + username1 + " win";
                 }
                 if (choose1.ToLower().Equals("búa"))
                 {
-                    if (choose2.ToLower().Equals("kéo")) return "Result:Player1 win";
+                    if (choose2.ToLower().Equals("kéo")) return "Result:" + username1 + " win";
                     if (choose2.ToLower().Equals("búa")) return "Result:Draw";
-                    if (choose2.ToLower().Equals("bao")) return "Result:Player2 win";
+                    if (choose2.ToLower().Equals("bao")) return "Result:" + username2 + " win";
                 }
                 if (choose1.ToLower().Equals("bao"))
                 {
-                    if (choose2.ToLower().Equals("kéo")) return "Result:Player2 win";
-                    if (choose2.ToLower().Equals("búa")) return "Result:Player1 win";
+                    if (choose2.ToLower().Equals("kéo")) return "Result:" + username2 + " win";
+                    if (choose2.ToLower().Equals("búa")) return "Result:" + username1 + " win";
                     if (choose2.ToLower().Equals("bao")) return "Result:Draw";
                 }
             }
@@ -78,6 +78,7 @@ namespace Server
             }
         }
         private List<string> messages = new List<string>();
+        private String roomId;
         private void HandleClient(Object _client)
         {
             TcpClient client = (TcpClient)_client;
@@ -98,15 +99,38 @@ namespace Server
                             messages.Add(message);
                             if (messages.Count == 2)
                             {
+                                String result = "";
+                                String[] list1 = messages[0].Split(':');
+                                String username1 = list1[1].Substring(0, list1[1].IndexOf(" "));
+                                Console.WriteLine(username1);
+                                String[] list2 = messages[1].Split(':');
+                                String username2 = list2[1].Substring(0, list2[1].IndexOf(" "));
                                 String choose1 = messages[0].Substring(messages[0].LastIndexOf(" ")+1);
-                                Console.WriteLine(choose1);
-                                String choose2 = messages[1].Substring(messages[1].LastIndexOf(" ")+1);
-                                Console.WriteLine(choose2);
-                                String result = handleResult(choose1, choose2);
-                                Console.WriteLine(result);
-                                richTextBox1.AppendText(result);
-                                BroadcastMessage(result);
-                                messages.Clear();
+                                String choose2 = messages[1].Substring(messages[1].LastIndexOf(" ") + 1);
+                                if (messages[0].Contains("choose not") && messages[1].Contains("choose not"))
+                                {
+                                    result = list1[0] + "Result: Draw";
+                                    richTextBox1.AppendText(result);
+                                    BroadcastMessage(result);
+                                    messages.Clear();
+                                }
+                                else if (messages[1].Contains("choose not"))
+                                {
+                                    result = list1[0] + "Result:" + username1 + " win " + choose1;
+                                    richTextBox1.AppendText(result);
+                                    BroadcastMessage(result);
+                                    messages.Clear();
+                                }
+                                else
+                                {
+                                    Console.WriteLine(choose1);
+                                    Console.WriteLine(choose2);
+                                    result = list1[0] + handleResult(choose1, choose2, username1, username2) + " ."+ username1+","+choose1+ ","+username2 + "," + choose2;
+                                    Console.WriteLine(result);
+                                    richTextBox1.AppendText(result);
+                                    BroadcastMessage(result);
+                                    messages.Clear();
+                                }
                             }
                         }
                     }

@@ -65,4 +65,14 @@ public class UserController {
     public ResponseEntity<UserInfoRoomDto> getInfo(@RequestParam("roomId") String roomId){
         return ResponseEntity.ok(userService.getInfoUserInRoom(roomId));
     }
+
+    @GetMapping("/addMoney")
+    public ResponseEntity<String> addMoney(@RequestParam("username") String username){
+        return ResponseEntity.ok(userService.addMoney(username));
+    }
+
+    @GetMapping("/subMoney")
+    public ResponseEntity<String> subMoney(@RequestParam("username") String username){
+        return ResponseEntity.ok(userService.subMoney(username));
+    }
 }

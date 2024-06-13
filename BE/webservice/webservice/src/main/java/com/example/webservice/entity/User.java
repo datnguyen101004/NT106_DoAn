@@ -22,16 +22,12 @@ public class User{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotBlank(message = "Username must not be empty")
     @Column(unique = true)
     private String username;
 
-    @Email(message = "Email is not valid")
-    @NotNull(message = "Email must not be empty")
     @Column(unique = true)
     private String email;
 
-    @NotNull(message = "Password must not be empty")
     private String password;
 
     private boolean enable = false;

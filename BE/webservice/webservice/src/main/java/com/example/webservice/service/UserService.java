@@ -25,4 +25,8 @@ public interface UserService {
     UserDto getUser(String username);
 
     UserInfoRoomDto getInfoUserInRoom(String roomId);
+
+    String addMoney(String username);
+
+    String subMoney(String username);
 }
