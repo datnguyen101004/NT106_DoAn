@@ -49,7 +49,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddInfo.Designer.cs">
+      <DependentUpon>AddInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateRoom.cs" />
+    <Compile Include="Rule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rule.Designer.cs">
+      <DependentUpon>Rule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Info.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +102,12 @@
       <DependentUpon>signup.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <EmbeddedResource Include="AddInfo.resx">
+      <DependentUpon>AddInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rule.resx">
+      <DependentUpon>Rule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Info.resx">
       <DependentUpon>Info.cs</DependentUpon>
     </EmbeddedResource>
@@ -220,6 +238,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logingmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ruleedit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
