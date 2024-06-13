@@ -63,6 +63,10 @@ public class MailServiceImpl implements MailService {
     @Override
     public String sendForgetMail(EmailDetail emailDetail) {
         try {
+            Optional<User> user = userRepository.findByEmail(emailDetail.getRecipient());
+            if (user.isEmpty()){
+                throw new Exception("Email not exist. Restore password fail");
+            }
             SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
             emailDetail.setSubject("Click the link to restore the password");
             emailDetail.setRecipient(emailDetail.getRecipient());

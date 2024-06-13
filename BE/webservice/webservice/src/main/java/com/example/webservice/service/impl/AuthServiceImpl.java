@@ -21,11 +21,19 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public String register(AuthRegisterDto authRegisterDto) {
         try {
+            Optional<User> _user = userRepository.findByEmail(authRegisterDto.getEmail());
+            if (_user.isPresent()) {
+                return "Email already exist. Register fail";
+            }
+            Optional<User> _user1 = userRepository.findByUsername(authRegisterDto.getUsername());
+            if (_user1.isPresent()) {
+                return "Username already exist. Register fail";
+            }
             User user = new User();
             user.setEmail(authRegisterDto.getEmail());
             user.setUsername(authRegisterDto.getUsername());
             user.setPassword(authRegisterDto.getPassword());
-            user.setEnable(true);
+            user.setEnable(false);
             user.setMoney(10000);
             user.setMatchLose(0);
             user.setMatchLose(0);
