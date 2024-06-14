@@ -79,9 +79,9 @@ public class AuthServiceImpl implements AuthService {
                 if (_user.isEnable() && Objects.equals(_user.getPassword(), authLoginDto.getPassword())) {
                     return _user.getUsername();
                 }
-                return "Password is incorrect or account is not enable";
+                return "Password is incorrect or account is not enable. Login fail";
             } else {
-                throw new Exception("Error with user is not exist");
+                return "Error with user is not exist. Login fail";
             }
         } catch (Exception ex) {
             return ex.getMessage();

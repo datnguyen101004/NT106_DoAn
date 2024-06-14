@@ -184,6 +184,7 @@ public class UserServiceImpl implements UserService {
         userDto.setEmail(user.getEmail());
         userDto.setMatchWin(user.getMatchWin());
         userDto.setMatchLose(user.getMatchLose());
+        userDto.setPassword(user.getPassword());
         return userDto;
     }
 

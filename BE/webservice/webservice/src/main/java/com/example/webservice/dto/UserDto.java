@@ -13,4 +13,5 @@ public class UserDto {
     private double money;
     private int matchWin;
     private int matchLose;
+    private String password;
 }
