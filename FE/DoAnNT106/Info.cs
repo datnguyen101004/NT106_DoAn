@@ -63,5 +63,10 @@ namespace DoAnNT106
             textBox5.Text = userInfo.matchLose.ToString();
             textBox6.Text = userInfo.password.ToString();
         }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

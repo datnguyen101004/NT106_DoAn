@@ -298,5 +298,14 @@ namespace DoAnNT106
             sr.Close();
             Close();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Feedback feedback = new Feedback();
+            this.Hide();
+            feedback.Hide();
+            feedback.ShowDialog();
+            this.Show();
+        }
     }
 }
