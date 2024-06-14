@@ -56,4 +56,9 @@ public class AuthController {
     public String hello(){
         return "hello";
     }
+
+    @GetMapping("/sendFeedback")
+    public ResponseEntity<String> sendFeedback(@RequestParam("feedback") String feedback){
+        return ResponseEntity.ok(mailService.sendFeedback(feedback));
+    }
 }

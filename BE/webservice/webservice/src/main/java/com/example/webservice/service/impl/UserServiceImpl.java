@@ -194,6 +194,7 @@ public class UserServiceImpl implements UserService {
         assert user != null;
         user.setEmail(userDto.getEmail());
         user.setUsername(userDto.getUsername());
+        user.setPassword(userDto.getPassword());
         userRepository.save(user);
         return "success";
     }

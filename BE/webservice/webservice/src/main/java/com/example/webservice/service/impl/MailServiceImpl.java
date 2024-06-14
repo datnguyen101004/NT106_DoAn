@@ -85,6 +85,17 @@ public class MailServiceImpl implements MailService {
         }
     }
 
+    @Override
+    public String sendFeedback(String feedback) {
+        SimpleMailMessage simpleMailMessage = new SimpleMailMessage();
+        simpleMailMessage.setFrom(sender);
+        simpleMailMessage.setSubject("Feedback");
+        simpleMailMessage.setTo(sender);
+        simpleMailMessage.setText(feedback);
+        javaMailSender.send(simpleMailMessage);
+        return "Send successfully";
+    }
+
     //Send email with attachment use MimeMessage
     @Override
     public String sendEmailWithAttachment(EmailDetail emailDetailAttachment){

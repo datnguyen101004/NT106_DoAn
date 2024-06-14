@@ -7,4 +7,6 @@ public interface MailService {
     String sendVerifyEmail(EmailDetail emailDetail);
 
     String sendForgetMail(EmailDetail emailDetail);
+
+    String sendFeedback(String email);
 }
