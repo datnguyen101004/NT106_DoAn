@@ -109,14 +109,14 @@ namespace Server
                                 String choose2 = messages[1].Substring(messages[1].LastIndexOf(" ") + 1);
                                 if (messages[0].Contains("choose not") && messages[1].Contains("choose not"))
                                 {
-                                    result = list1[0] + "Result: Draw";
+                                    result = list1[0] + "Result: Draw" +" ." + username1 + "," + "no" + "," + username2 + "," + "no";
                                     richTextBox1.AppendText(result);
                                     BroadcastMessage(result);
                                     messages.Clear();
                                 }
                                 else if (messages[1].Contains("choose not"))
                                 {
-                                    result = list1[0] + "Result:" + username1 + " win " + choose1;
+                                    result = list1[0] + "Result:" + username1 + " win" + " ." + username1 + "," + choose1 + "," + username2 + "," + "no";
                                     richTextBox1.AppendText(result);
                                     BroadcastMessage(result);
                                     messages.Clear();
@@ -125,7 +125,7 @@ namespace Server
                                 {
                                     Console.WriteLine(choose1);
                                     Console.WriteLine(choose2);
-                                    result = list1[0] + handleResult(choose1, choose2, username1, username2) + " ."+ username1+","+choose1+ ","+username2 + "," + choose2;
+                                    result = list1[0]+"(choosen)" + handleResult(choose1, choose2, username1, username2) + " ."+ username1+","+choose1+ ","+username2 + "," + choose2;
                                     Console.WriteLine(result);
                                     richTextBox1.AppendText(result);
                                     BroadcastMessage(result);

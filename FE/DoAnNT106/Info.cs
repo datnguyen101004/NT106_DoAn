@@ -36,7 +36,8 @@ namespace DoAnNT106
                 email = textBox2.Text,
                 money = Double.Parse(textBox3.Text),
                 matchWin = int.Parse(textBox4.Text),
-                matchLose = int.Parse(textBox5.Text)
+                matchLose = int.Parse(textBox5.Text),
+                password = textBox6.Text,
             };
             String queryParam = "http://localhost:8080/user/edit?username=" + username;
             HttpClient client = new HttpClient();
@@ -60,6 +61,7 @@ namespace DoAnNT106
             textBox3.Text = userInfo.money.ToString();
             textBox4.Text = userInfo.matchWin.ToString();
             textBox5.Text = userInfo.matchLose.ToString();
+            textBox6.Text = userInfo.password.ToString();
         }
     }
 }

@@ -46,7 +46,7 @@ namespace DoAnNT106
                 if (httpResponseMessage.IsSuccessStatusCode)
                 {
                     String message = await httpResponseMessage.Content.ReadAsStringAsync();
-                    if (!message.Contains("error"))
+                    if (!message.Contains("fail"))
                     {
                         MessageBox.Show("Success");
                         this.Hide();
@@ -55,7 +55,7 @@ namespace DoAnNT106
                     }
                     else
                     {
-                        MessageBox.Show("Incorrect username or password");
+                        MessageBox.Show(message);
                     }
                 }
                 else

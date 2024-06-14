@@ -13,5 +13,6 @@ namespace DoAnNT106
         public Double money { get; set; }
         public int matchWin { get; set; }
         public int matchLose { get; set; }
+        public String password { get; set; }
     }
 }

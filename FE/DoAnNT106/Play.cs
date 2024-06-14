@@ -99,6 +99,7 @@ namespace DoAnNT106
                     }
                     if (timeCountDown < 0)
                     {
+                        label8.Text = "";
                         label8.Visible = false;
                         label3.Visible = true;
                         if ((button1.Enabled == true) && (button2.Enabled == true) && (button1.Enabled == true))
@@ -174,6 +175,7 @@ namespace DoAnNT106
                     //Receive result and display the result
                     if (message != null && message.ToLower().Contains("result"))
                     {
+                        label8.Text = "";
                         Console.WriteLine("display result");
                         label8.Visible = false;
                         timer.Stop();
@@ -282,7 +284,8 @@ namespace DoAnNT106
                         String noti = message.Substring(0, message.IndexOf("with") - 1);
                         String username = message.Substring(0, message.IndexOf(" "));
                         username2 = username;
-                        getMoney(username);
+                        getMoney(username2);
+                        Console.WriteLine(competitorMoney);
                         label5.Text = noti;
                         label6.Visible = true;
                         label7.Visible = true;

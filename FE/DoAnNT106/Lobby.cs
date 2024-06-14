@@ -287,5 +287,16 @@ namespace DoAnNT106
         {
 
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (tcpClient.Connected)
+            {
+                tcpClient.Close();
+            }
+            sw.Close();
+            sr.Close();
+            Close();
+        }
     }
 }
