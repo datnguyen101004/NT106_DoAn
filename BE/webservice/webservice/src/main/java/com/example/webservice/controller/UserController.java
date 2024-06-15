@@ -2,12 +2,14 @@ package com.example.webservice.controller;
 
 import com.example.webservice.dto.*;
 import com.example.webservice.entity.User;
+import com.example.webservice.service.GeminiService;
 import com.example.webservice.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
@@ -15,6 +17,7 @@ import java.util.List;
 @CrossOrigin
 public class UserController {
     private final UserService userService;
+    private final GeminiService geminiService;
 
     @PostMapping("/changePassword")
     public ResponseEntity<String> changePassword(@RequestBody UserChangePassword userChangePassword){
@@ -84,5 +87,11 @@ public class UserController {
     @PutMapping("/edit")
     public ResponseEntity<String> editUser(@RequestBody UserDto userDto, @RequestParam("username") String username){
         return ResponseEntity.ok(userService.editInfo(userDto, username));
+    }
+
+    @PostMapping("/gemini")
+    public String generateContent(@RequestBody Map<String, String> request) {
+        String text = request.get("text");
+        return geminiService.generateContent(text);
     }
 }

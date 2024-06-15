@@ -4,7 +4,7 @@ server:
 spring:
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: create-drop
     show-sql: true
     properties:
       hibernate:
@@ -23,5 +23,9 @@ spring:
     password: hozg yohs htni gswl
     properties.mail.smtp.auth: true
     properties.mail.smtp.starttls.enable: true
+
+gemini:
+  api:
+    key: AIzaSyCuH35gLRCsoPLfq6cGTa2pcGR2eORf3kM
 
 
