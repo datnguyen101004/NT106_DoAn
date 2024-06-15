@@ -23,7 +23,7 @@ namespace Server
             InitializeComponent();
         }
 
-        //Handle the choosen of 2 people
+        //Handle the result if two people choose
         private String handleResult(String choose1, String choose2, String username1, String username2)
         {
             if (choose1 != null && choose2 != null)
@@ -67,9 +67,12 @@ namespace Server
                 {
                     TcpClient clientSocket = serverSocket.AcceptTcpClient();
                     clientsList.Add(clientSocket);
-                    Thread clientThread = new Thread(new ParameterizedThreadStart(HandleClient));
-                    clientThread.IsBackground = true;
-                    clientThread.Start(clientSocket);
+                    if (clientSocket.Connected)
+                    {
+                        Thread clientThread = new Thread(new ParameterizedThreadStart(HandleClient));
+                        clientThread.IsBackground = true;
+                        clientThread.Start(clientSocket);
+                    }
                 }
             }
             catch (Exception ex)
@@ -87,7 +90,7 @@ namespace Server
                 StreamReader reader = new StreamReader(client.GetStream());
                 StreamWriter writer = new StreamWriter(client.GetStream());
                 writer.AutoFlush = true;
-                while (true)
+                while (client.Connected)
                 {
                     string message = reader.ReadLine();
                     if (message != null)
@@ -154,6 +157,7 @@ namespace Server
                 {
                     clientsList.Remove(client);
                     richTextBox1.AppendText("Client disconected");
+                    Console.WriteLine(clientsList.ToArray().ToString());
                 }
             }
             foreach (TcpClient client in clientsList)

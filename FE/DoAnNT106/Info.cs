@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Net.Sockets;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -43,6 +44,7 @@ namespace DoAnNT106
             HttpClient client = new HttpClient();
             var userEditJson = JsonConvert.SerializeObject(userEditInfo);
             var requestBody = new StringContent(userEditJson, Encoding.UTF8, "application/json");
+            Thread.Sleep(200);
             HttpResponseMessage httpResponseMessage = await client.PutAsync(queryParam, requestBody);
             MessageBox.Show("Success");
             sw.WriteLine(username + " update:"+textBox1.Text);
@@ -56,6 +58,7 @@ namespace DoAnNT106
                 String queryParam = "http://localhost:8080/user/info?username=" + username;
                 HttpClient client = new HttpClient();
                 HttpResponseMessage httpResponseMessage = await client.GetAsync(queryParam);
+                Thread.Sleep(200);
                 var data = await httpResponseMessage.Content.ReadAsStringAsync();
                 var userInfo = JsonConvert.DeserializeObject<UserInfo>(data);
                 textBox1.Text = userInfo.username;

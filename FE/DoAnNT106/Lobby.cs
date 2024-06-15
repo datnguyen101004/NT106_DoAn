@@ -89,11 +89,14 @@ namespace DoAnNT106
                     {
                         if (this.InvokeRequired)
                         {
-                            usernameTran = notification.Substring(notification.IndexOf(":") + 1);
-                            this.Invoke(new Action(() =>
+                            if (usernameTran.Equals(notification.Substring(0, notification.IndexOf(" "))))
                             {
-                                label2.Text = "Username:" + usernameTran;
-                            }));
+                                usernameTran = notification.Substring(notification.IndexOf(":") + 1);
+                                this.Invoke(new Action(() =>
+                                {
+                                    label2.Text = "Username:" + usernameTran;
+                                }));
+                            }
                         }
                     }
                 }
@@ -290,12 +293,14 @@ namespace DoAnNT106
 
         private void button6_Click(object sender, EventArgs e)
         {
+            enableListenLobby = false;
+            sendMessage(usernameTran + " disconnected");
+            sw.Close();
+            sr.Close();
             if (tcpClient.Connected)
             {
                 tcpClient.Close();
             }
-            sw.Close();
-            sr.Close();
             Close();
         }
 
