@@ -52,6 +52,7 @@ namespace DoAnNT106
                         this.Hide();
                         Lobby lobby = new Lobby(message);
                         lobby.ShowDialog();
+                        this.Show();
                     }
                     else
                     {

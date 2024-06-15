@@ -302,10 +302,16 @@ namespace DoAnNT106
         private void button5_Click(object sender, EventArgs e)
         {
             Feedback feedback = new Feedback();
-            this.Hide();
             feedback.Hide();
             feedback.ShowDialog();
             this.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Chatbot chatbot = new Chatbot(usernameTran);
+            chatbot.Hide();
+            chatbot.ShowDialog();
         }
     }
 }

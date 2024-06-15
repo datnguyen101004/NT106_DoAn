@@ -51,17 +51,24 @@ namespace DoAnNT106
 
         private async void Info_Load(object sender, EventArgs e)
         {
-            String queryParam = "http://localhost:8080/user/info?username=" + username;
-            HttpClient client = new HttpClient();
-            HttpResponseMessage httpResponseMessage = await client.GetAsync(queryParam);
-            var data = await httpResponseMessage.Content.ReadAsStringAsync();
-            var userInfo = JsonConvert.DeserializeObject<UserInfo>(data);
-            textBox1.Text = userInfo.username;
-            textBox2.Text = userInfo.email;
-            textBox3.Text = userInfo.money.ToString();
-            textBox4.Text = userInfo.matchWin.ToString();
-            textBox5.Text = userInfo.matchLose.ToString();
-            textBox6.Text = userInfo.password.ToString();
+            try
+            {
+                String queryParam = "http://localhost:8080/user/info?username=" + username;
+                HttpClient client = new HttpClient();
+                HttpResponseMessage httpResponseMessage = await client.GetAsync(queryParam);
+                var data = await httpResponseMessage.Content.ReadAsStringAsync();
+                var userInfo = JsonConvert.DeserializeObject<UserInfo>(data);
+                textBox1.Text = userInfo.username;
+                textBox2.Text = userInfo.email;
+                textBox3.Text = userInfo.money.ToString();
+                textBox4.Text = userInfo.matchWin.ToString();
+                textBox5.Text = userInfo.matchLose.ToString();
+                textBox6.Text = userInfo.password.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)

@@ -67,6 +67,7 @@ namespace DoAnNT106
                 {
                     if (timeCountDown >= 0)
                     {
+                        button7.Visible = true;
                         label8.Text = timeCountDown--.ToString();
                     }
                     if (timeCountDown == -1)
@@ -110,6 +111,11 @@ namespace DoAnNT106
                     }
                 }
             }));
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            sendMessage(roomID + ":cancle");
         }
 
         //Handle if you don't choose any option
@@ -282,14 +288,15 @@ namespace DoAnNT106
                         Console.WriteLine(message + "rec in playroom");
                         label5.Visible = true;
                         String noti = message.Substring(0, message.IndexOf("with") - 1);
-                        String username = message.Substring(0, message.IndexOf(" "));
-                        username2 = username;
+                        String usernamePlayer2 = message.Substring(0, message.IndexOf(" "));
+                        username2 = usernamePlayer2;
                         getMoney(username2);
+                        waitTime(0.2);
                         Console.WriteLine(competitorMoney);
                         label5.Text = noti;
                         label6.Visible = true;
                         label7.Visible = true;
-                        label6.Text = "Username: " + username;
+                        label6.Text = "Username: " + usernamePlayer2;
                         label7.Text = "Money: " + competitorMoney.ToString();
                         button5.Enabled = true;
                         waitTime(3);
@@ -305,9 +312,20 @@ namespace DoAnNT106
                     {
                         updateUIOutRoom();
                     }
+                    //Set count down play time 15s
                     if (message != null && message.ToLower().Contains("go"))
                     {
+                        button7.Visible = false;
                         setTimer(15);
+                    }
+                    //If button cancle is clicked cancle the play
+                    if (message != null && message.ToLower().Contains("cancle"))
+                    {
+                        label8.Text = "";
+                        label8.Visible = false;
+                        button5.Visible = true;
+                        button7.Visible = false;
+                        timer.Stop();
                     }
                 }
             }
@@ -373,29 +391,30 @@ namespace DoAnNT106
             button4.Enabled=false;
         }
 
-        private void updateStartRoom()
+        /*private void updateStartRoom()
         {
             pictureBox1.Visible = true;
             pictureBox2.Visible = true;
             button5.Visible = false;
-        }
+        }*/
 
-        private Double competitorMoney;
+        private double competitorMoney = 10000;
 
         //Get money
         private async void getMoney(string username)
         {
+            Console.WriteLine(username);
             String requestParam = "/user/money?username=" + username;
             HttpResponseMessage httpResponseMessage = await httpClient.GetAsync(requestParam);
             String money = await httpResponseMessage.Content.ReadAsStringAsync();
-            competitorMoney = Double.Parse(money);
+            competitorMoney = double.Parse(money);
         }
 
 
         //Set time waiting
-        private void waitTime(int second)
+        private void waitTime(double second)
         {
-            Thread.Sleep(second*1000);
+            Thread.Sleep((int)(second * 1000));
         }
 
         private static HttpClient httpClient = new HttpClient()
@@ -469,6 +488,7 @@ namespace DoAnNT106
 		
         private void Play_Load(object sender, EventArgs e)
         {
+            button7.Visible = false;
             label8.Visible = false;
             button3.Enabled = false;
             button4.Enabled = false;

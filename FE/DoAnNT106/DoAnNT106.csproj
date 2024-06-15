@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chatbot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Chatbot.Designer.cs">
+      <DependentUpon>Chatbot.cs</DependentUpon>
+    </Compile>
     <Compile Include="CreateRoom.cs" />
     <Compile Include="EditInfo.cs">
       <SubType>Form</SubType>
@@ -109,6 +115,9 @@
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UserInfo.cs" />
+    <EmbeddedResource Include="Chatbot.resx">
+      <DependentUpon>Chatbot.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditInfo.resx">
       <DependentUpon>EditInfo.cs</DependentUpon>
     </EmbeddedResource>
