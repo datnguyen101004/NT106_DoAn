@@ -26,10 +26,10 @@ namespace DoAnNT106
         {
             try
             {
-                textBox1.Text = "";
                 button1.Enabled = false;
                 String prompt = textBox1.Text.ToString();
                 richTextBox1.AppendText(username + ":" +prompt + "\n");
+                textBox1.Text = "";
                 String uri = "http://localhost:8080/user/gemini";
                 var requestBody = new
                 {

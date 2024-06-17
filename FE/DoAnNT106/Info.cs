@@ -44,10 +44,10 @@ namespace DoAnNT106
             HttpClient client = new HttpClient();
             var userEditJson = JsonConvert.SerializeObject(userEditInfo);
             var requestBody = new StringContent(userEditJson, Encoding.UTF8, "application/json");
-            Thread.Sleep(200);
             HttpResponseMessage httpResponseMessage = await client.PutAsync(queryParam, requestBody);
             MessageBox.Show("Success");
             sw.WriteLine(username + " update:"+textBox1.Text);
+            Thread.Sleep(300);
             Close();
         }
 

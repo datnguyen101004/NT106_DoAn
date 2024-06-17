@@ -87,16 +87,14 @@ namespace DoAnNT106
                     }
                     if (notification != null && notification.ToLower().Contains("update"))
                     {
-                        if (this.InvokeRequired)
+                        if (usernameTran.Equals(notification.Substring(0, notification.IndexOf(" "))))
                         {
-                            if (usernameTran.Equals(notification.Substring(0, notification.IndexOf(" "))))
+                            usernameTran = notification.Substring(notification.IndexOf(":") + 1);
+                            Console.WriteLine(usernameTran);
+                            this.Invoke(new Action(() =>
                             {
-                                usernameTran = notification.Substring(notification.IndexOf(":") + 1);
-                                this.Invoke(new Action(() =>
-                                {
-                                    label2.Text = "Username:" + usernameTran;
-                                }));
-                            }
+                                label2.Text = "Username:" + usernameTran;
+                            }));
                         }
                     }
                 }
